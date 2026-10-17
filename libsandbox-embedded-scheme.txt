@@ -1,0 +1,1328 @@
+^.[$()|*+?{\
+(define (caar x) (car (car x)))
+(define (cadr x) (car (cdr x)))
+(define (cdar x) (cdr (car x)))
+(define (cddr x) (cdr (cdr x)))
+(define (caaar x) (car (car (car x))))
+(define (caadr x) (car (car (cdr x))))
+(define (cadar x) (car (cdr (car x))))
+(define (caddr x) (car (cdr (cdr x))))
+(define (cdaar x) (cdr (car (car x))))
+(define (cdadr x) (cdr (car (cdr x))))
+(define (cddar x) (cdr (cdr (car x))))
+(define (cdddr x) (cdr (cdr (cdr x))))
+(define (caaaar x) (car (car (car (car x)))))
+(define (caaadr x) (car (car (car (cdr x)))))
+(define (caadar x) (car (car (cdr (car x)))))
+(define (caaddr x) (car (car (cdr (cdr x)))))
+(define (cadaar x) (car (cdr (car (car x)))))
+(define (cadadr x) (car (cdr (car (cdr x)))))
+(define (caddar x) (car (cdr (cdr (car x)))))
+(define (cadddr x) (car (cdr (cdr (cdr x)))))
+(define (cdaaar x) (cdr (car (car (car x)))))
+(define (cdaadr x) (cdr (car (car (cdr x)))))
+(define (cdadar x) (cdr (car (cdr (car x)))))
+(define (cdaddr x) (cdr (car (cdr (cdr x)))))
+(define (cddaar x) (cdr (cdr (car (car x)))))
+(define (cddadr x) (cdr (cdr (car (cdr x)))))
+(define (cdddar x) (cdr (cdr (cdr (car x)))))
+(define (cddddr x) (cdr (cdr (cdr (cdr x)))))
+(macro (unless form) `(if (not ,(cadr form)) (begin ,@(cddr form))))
+(macro (when form) `(if ,(cadr form) (begin ,@(cddr form))))
+(macro (define-macro dform)
+       (if (symbol? (cadr dform))
+         `(macro ,@(cdr dform))
+         (let ((form (gensym)))
+           `(macro (,(caadr dform) ,form)
+                   (apply (lambda ,(cdadr dform) ,@(cddr dform))
+                          (cdr ,form))))))
+(define exact? integer?)
+(define (inexact? x) (and (real? x) (not (integer? x))))
+(define (even? n) (= (remainder n 2) 0))
+(define (odd? n) (not (= (remainder n 2) 0)))
+(define (zero? n) (= n 0))
+(define (positive? n) (> n 0))
+(define (negative? n) (< n 0))
+(define complex? number?)
+(define rational? real?)
+(define (abs n) (if (>= n 0) n (- n)))
+(define (exact->inexact n) (* n 1))
+(define (<> n1 n2) (not (= n1 n2)))
+(define (max . lst)
+  (foldr (lambda (a b) (if (> a b) a b)) (car lst) (cdr lst)))
+(define (min . lst)
+  (foldr (lambda (a b) (if (< a b) a b)) (car lst) (cdr lst)))
+(define (succ x) (+ x 1))
+(define (pred x) (- x 1))
+(define (gcd a b)
+  (let ((aa (abs a)) (bb (abs b)))
+    (if (= bb 0) aa (gcd bb (remainder aa bb)))))
+(define (lcm a b)
+  (if (or (= a 0) (= b 0)) 0 (abs (* (quotient a (gcd a b)) b))))
+(define call/cc call-with-current-continuation)
+(define (string . charlist) (list->string charlist))
+(define (list->string charlist)
+  (let* ((len (length charlist))
+         (newstr (make-string len))
+         (fill-string!
+           (lambda (str i len charlist)
+             (if (= i len)
+               str
+               (begin
+                 (string-set! str i (car charlist))
+                 (fill-string! str (+ i 1) len (cdr charlist)))))))
+    (fill-string! newstr 0 len charlist)))
+(define (string-fill! s e)
+  (let ((n (string-length s)))
+    (let loop ((i 0))
+      (if (= i n) s (begin (string-set! s i e) (loop (succ i)))))))
+(define (string->list s)
+  (let loop ((n (pred (string-length s))) (l '()))
+    (if (= n -1) l (loop (pred n) (cons (string-ref s n) l)))))
+(define (string-copy str) (string-append str))
+(define (string->anyatom str pred)
+  (let* ((a (string->atom str)))
+    (if (pred a) a (error "string->xxx: not a xxx" a))))
+(define (string->number str) (string->anyatom str number?))
+(define (anyatom->string n pred)
+  (if (pred n) (atom->string n) (error "xxx->string: not a xxx" n)))
+(define (number->string n) (anyatom->string n number?))
+(define (char-cmp? cmp a b) (cmp (char->integer a) (char->integer b)))
+(define (char-ci-cmp? cmp a b)
+  (cmp (char->integer (char-downcase a)) (char->integer (char-downcase b))))
+(define (char=? a b) (char-cmp? = a b))
+(define (char<? a b) (char-cmp? < a b))
+(define (char>? a b) (char-cmp? > a b))
+(define (char<=? a b) (char-cmp? <= a b))
+(define (char>=? a b) (char-cmp? >= a b))
+(define (char-ci=? a b) (char-ci-cmp? = a b))
+(define (char-ci<? a b) (char-ci-cmp? < a b))
+(define (char-ci>? a b) (char-ci-cmp? > a b))
+(define (char-ci<=? a b) (char-ci-cmp? <= a b))
+(define (char-ci>=? a b) (char-ci-cmp? >= a b))
+(define (string=? a b) (= (internal-strcmp a b #f) 0))
+(define (string<? a b) (< (internal-strcmp a b #f) 0))
+(define (string>? a b) (> (internal-strcmp a b #f) 0))
+(define (string<=? a b) (<= (internal-strcmp a b #f) 0))
+(define (string>=? a b) (>= (internal-strcmp a b #f) 0))
+(define (string-ci=? a b) (= (internal-strcmp a b #t) 0))
+(define (string-ci<? a b) (< (internal-strcmp a b #t) 0))
+(define (string-ci>? a b) (> (internal-strcmp a b #t) 0))
+(define (string-ci<=? a b) (<= (internal-strcmp a b #t) 0))
+(define (string-ci>=? a b) (>= (internal-strcmp a b #t) 0))
+(define (list . x) x)
+(define (foldr f x lst) (if (null? lst) x (foldr f (f x (car lst)) (cdr lst))))
+(define (unzip1-with-cdr . lists) (unzip1-with-cdr-iterative lists '() '()))
+(define (unzip1-with-cdr-iterative lists cars cdrs)
+  (if (null? lists)
+    (cons cars cdrs)
+    (let ((car1 (caar lists)) (cdr1 (cdar lists)))
+      (unzip1-with-cdr-iterative
+        (cdr lists)
+        (append cars (list car1))
+        (append cdrs (list cdr1))))))
+(define (map proc . lists)
+  (if (null? lists)
+    (apply proc)
+    (if (null? (car lists))
+      '()
+      (let* ((unz (apply unzip1-with-cdr lists))
+             (cars (car unz))
+             (cdrs (cdr unz)))
+        (cons (apply proc cars) (apply map (cons proc cdrs)))))))
+(define (filter pred l)
+  (if (null? l)
+    '()
+    (if (pred (car l))
+      (cons (car l) (filter pred (cdr l)))
+      (filter pred (cdr l)))))
+(define (flatten lst)
+  (foldr (lambda (x e) (if (list? e) (append (flatten e) x) (cons e x)))
+         ()
+         lst))
+(define (partition pred lst)
+  (letrec ((collect
+             (lambda (lst in out)
+               (if (null? lst)
+                 (list in out)
+                 (let ((x (car lst)) (rest (cdr lst)))
+                   (if (pred x)
+                     (collect rest (append in (list x)) out)
+                     (collect rest in (append out (list x)))))))))
+    (collect lst '() '())))
+(define (for-each proc . lists)
+  (if (null? lists)
+    (apply proc)
+    (if (null? (car lists))
+      #t
+      (let* ((unz (apply unzip1-with-cdr lists))
+             (cars (car unz))
+             (cdrs (cdr unz)))
+        (apply proc cars)
+        (apply map (cons proc cdrs))))))
+(define (list-tail x k) (if (zero? k) x (list-tail (cdr x) (- k 1))))
+(define (list-ref x k) (car (list-tail x k)))
+(define (last-pair x) (if (pair? (cdr x)) (last-pair (cdr x)) x))
+(define (take l n) (if (= n 0) '() (cons (car l) (take (cdr l) (- n 1)))))
+(define (drop l n) (if (= n 0) l (drop (cdr l) (- n 1))))
+(define (head stream) (car stream))
+(define (tail stream) (force (cdr stream)))
+(define (vector-equal? x y)
+  (and (vector? x)
+       (vector? y)
+       (= (vector-length x) (vector-length y))
+       (let ((n (vector-length x)))
+         (let loop ((i 0))
+           (if (= i n)
+             #t
+             (and (equal? (vector-ref x i) (vector-ref y i))
+                  (loop (succ i))))))))
+(define (list->vector x) (apply vector x))
+(define (vector-fill! v e)
+  (let ((n (vector-length v)))
+    (let loop ((i 0))
+      (if (= i n) v (begin (vector-set! v i e) (loop (succ i)))))))
+(define (vector->list v)
+  (let loop ((n (pred (vector-length v))) (l '()))
+    (if (= n -1) l (loop (pred n) (cons (vector-ref v n) l)))))
+(macro quasiquote
+       (lambda (l)
+         (define (mcons f l r)
+           (if (and (pair? r)
+                    (eq? (car r) 'quote)
+                    (eq? (car (cdr r)) (cdr f))
+                    (pair? l)
+                    (eq? (car l) 'quote)
+                    (eq? (car (cdr l)) (car f)))
+             (if (or (procedure? f) (number? f) (string? f)) f (list 'quote f))
+             (if (eqv? l vector) (apply l (eval r)) (list 'cons l r))))
+         (define (mappend f l r)
+           (if (or (null? (cdr f))
+                   (and (pair? r)
+                        (eq? (car r) 'quote)
+                        (eq? (car (cdr r)) '())))
+             l
+             (list 'append l r)))
+         (define (foo level form)
+           (cond ((not (pair? form))
+                  (if (or (procedure? form) (number? form) (string? form))
+                    form
+                    (list 'quote form)))
+                 ((eq? 'quasiquote (car form))
+                  (mcons form ''quasiquote (foo (+ level 1) (cdr form))))
+                 (#t
+                  (if (zero? level)
+                    (cond ((eq? (car form) 'unquote) (car (cdr form)))
+                          ((eq? (car form) 'unquote-splicing)
+                           (error "Unquote-splicing wasn't in a list:" form))
+                          ((and (pair? (car form))
+                                (eq? (car (car form)) 'unquote-splicing))
+                           (mappend
+                             form
+                             (car (cdr (car form)))
+                             (foo level (cdr form))))
+                          (#t
+                           (mcons form
+                                  (foo level (car form))
+                                  (foo level (cdr form)))))
+                    (cond ((eq? (car form) 'unquote)
+                           (mcons form ''unquote (foo (- level 1) (cdr form))))
+                          ((eq? (car form) 'unquote-splicing)
+                           (mcons form
+                                  ''unquote-splicing
+                                  (foo (- level 1) (cdr form))))
+                          (#t
+                           (mcons form
+                                  (foo level (car form))
+                                  (foo level (cdr form)))))))))
+         (foo 0 (car (cdr l)))))
+(define (atom? x) (not (pair? x)))
+(define (equal? x y)
+  (cond ((pair? x)
+         (and (pair? y) (equal? (car x) (car y)) (equal? (cdr x) (cdr y))))
+        ((vector? x) (and (vector? y) (vector-equal? x y)))
+        ((string? x) (and (string? y) (string=? x y)))
+        (else (eqv? x y))))
+(macro do
+       (lambda (do-macro)
+         (apply (lambda (do vars endtest . body)
+                  (let ((do-loop (gensym)))
+                    `(letrec ((,do-loop
+                               (lambda (unquote
+                                        (map (lambda (x) (if (pair? x) (car x) x))
+                                             `,vars))
+                                 (if ,(car endtest)
+                                   (begin ,@(cdr endtest))
+                                   (begin
+                                     ,@body
+                                     (,do-loop
+                                      ,@(map (lambda (x)
+                                               (cond ((not (pair? x)) x)
+                                                     ((< (length x) 3) (car x))
+                                                     (else (car (cdr (cdr x))))))
+                                             `,vars)))))))
+                       (,do-loop
+                        ,@(map (lambda (x)
+                                 (if (and (pair? x) (cdr x)) (car (cdr x)) '()))
+                               `,vars)))))
+                do-macro)))
+(define (generic-member cmp obj lst)
+  (cond ((null? lst) #f)
+        ((cmp obj (car lst)) lst)
+        (else (generic-member cmp obj (cdr lst)))))
+(define (memq obj lst) (generic-member eq? obj lst))
+(define (memv obj lst) (generic-member eqv? obj lst))
+(define (member obj lst) (generic-member equal? obj lst))
+(define (generic-assoc cmp obj alst)
+  (cond ((null? alst) #f)
+        ((cmp obj (caar alst)) (car alst))
+        (else (generic-assoc cmp obj (cdr alst)))))
+(define (assq obj alst) (generic-assoc eq? obj alst))
+(define (assv obj alst) (generic-assoc eqv? obj alst))
+(define (assoc obj alst) (generic-assoc equal? obj alst))
+(define (acons x y z) (cons (cons x y) z))
+(define (macro-expand form) ((eval (get-closure-code (eval (car form)))) form))
+(macro (define-with-return form)
+       `(define ,(cadr form) (call/cc (lambda (return) ,@(cddr form)))))
+(define *handlers* (list))
+(define (push-handler proc) (set! *handlers* (cons proc *handlers*)))
+(define (pop-handler)
+  (let ((h (car *handlers*))) (set! *handlers* (cdr *handlers*)) h))
+(define (more-handlers?) (pair? *handlers*))
+(define (throw . x)
+  (if (more-handlers?) (apply (pop-handler)) (apply error x)))
+(macro (catch form)
+       (let ((label (gensym)))
+         `(call/cc
+            (lambda (exit)
+              (push-handler (lambda () (exit ,(cadr form))))
+              (let ((,label (begin ,@(cddr form)))) (pop-handler) ,label)))))
+(define *error-hook* throw)
+(macro (make-environment form)
+       `(apply (lambda () ,@(cdr form) (current-environment))))
+(define-macro
+  (eval-polymorphic x . envl)
+  (display envl)
+  (let* ((env (if (null? envl) (current-environment) (eval (car envl))))
+         (xval (eval x env)))
+    (if (closure? xval) (make-closure (get-closure-code xval) env) xval)))
+(define *colon-hook* eval)
+(define (input-output-port? p) (and (input-port? p) (output-port? p)))
+(define (close-port p)
+  (cond ((input-output-port? p) (close-input-port (close-output-port p)))
+        ((input-port? p) (close-input-port p))
+        ((output-port? p) (close-output-port p))
+        (else (throw "Not a port" p))))
+(define (call-with-input-file s p)
+  (let ((inport (open-input-file s)))
+    (if (eq? inport #f)
+      #f
+      (let ((res (p inport))) (close-input-port inport) res))))
+(define (call-with-output-file s p)
+  (let ((outport (open-output-file s)))
+    (if (eq? outport #f)
+      #f
+      (let ((res (p outport))) (close-output-port outport) res))))
+(define (with-input-from-file s p)
+  (let ((inport (open-input-file s)))
+    (if (eq? inport #f)
+      #f
+      (let ((prev-inport (current-input-port)))
+        (set-input-port inport)
+        (let ((res (p)))
+          (close-input-port inport)
+          (set-input-port prev-inport)
+          res)))))
+(define (with-output-to-file s p)
+  (let ((outport (open-output-file s)))
+    (if (eq? outport #f)
+      #f
+      (let ((prev-outport (current-output-port)))
+        (set-output-port outport)
+        (let ((res (p)))
+          (close-output-port outport)
+          (set-output-port prev-outport)
+          res)))))
+(define (with-input-output-from-to-files si so p)
+  (let ((inport (open-input-file si)) (outport (open-input-file so)))
+    (if (not (and inport outport))
+      (begin (close-input-port inport) (close-output-port outport) #f)
+      (let ((prev-inport (current-input-port))
+            (prev-outport (current-output-port)))
+        (set-input-port inport)
+        (set-output-port outport)
+        (let ((res (p)))
+          (close-input-port inport)
+          (close-output-port outport)
+          (set-input-port prev-inport)
+          (set-output-port prev-outport)
+          res)))))
+(define *seed* 1)
+(define (random-next)
+  (let* ((a 16807) (m 2147483647) (q (quotient m a)) (r (modulo m a)))
+    (set! *seed*
+      (- (* a (- *seed* (* (quotient *seed* q) q))) (* (quotient *seed* q) r)))
+    (if (< *seed* 0) (set! *seed* (+ *seed* m)))
+    *seed*))
+(define *features* '(srfi-0))
+(define-macro
+  (cond-expand . cond-action-list)
+  (cond-expand-runtime cond-action-list))
+(define (cond-expand-runtime cond-action-list)
+  (if (null? cond-action-list)
+    #t
+    (if (cond-eval (caar cond-action-list))
+      `(begin ,@(cdar cond-action-list))
+      (cond-expand-runtime (cdr cond-action-list)))))
+(define (cond-eval-and cond-list)
+  (foldr (lambda (x y) (and (cond-eval x) (cond-eval y))) #t cond-list))
+(define (cond-eval-or cond-list)
+  (foldr (lambda (x y) (or (cond-eval x) (cond-eval y))) #f cond-list))
+(define (cond-eval condition)
+  (cond ((symbol? condition) (if (member condition *features*) #t #f))
+        ((eq? condition #t) #t)
+        ((eq? condition #f) #f)
+        (else
+         (case (car condition)
+           ((and) (cond-eval-and (cdr condition)))
+           ((or) (cond-eval-or (cdr condition)))
+           ((not)
+            (if (not (null? (cddr condition)))
+              (error "cond-expand : 'not' takes 1 argument")
+              (not (cond-eval (cadr condition)))))
+           (else (error "cond-expand : unknown operator" (car condition)))))))
+(gc-verbose #f)
+(let ((orig-eqv? eqv?) (orig-pair? pair?))
+  (set! pair?
+    (lambda (x)
+      (and (orig-pair? x)
+           (not (or (sbpl-filter? x)
+                    (sbpl-message-filter? x)
+                    (sbpl-modifier? x)
+                    (sbpl-operation? x))))))
+  (set! eqv?
+    (lambda (x y)
+      (if (orig-pair? x)
+        (cond ((sbpl-filter? x y) (sbpl-filter-eqv? x y))
+              ((sbpl-message-filter? x y) (sbpl-message-filter-eqv? x y))
+              ((sbpl-modifier? x y)
+               (equal?
+                 (%sbpl-modifier-properties x)
+                 (%sbpl-modifier-properties y)))
+              ((sbpl-operation? x y) (sbpl-operation-eqv? x y))
+              (else #f))
+        (orig-eqv? x y)))))
+(define (%finalize))
+(define (param key)
+  (let ((value (assoc key *params*))) (and value (cdr value))))
+(let ((old-load load)
+      (old-open-input-file open-input-file)
+      (old-open-output-file open-output-file))
+  (set! load (lambda (path) (%notify-file-open path 'read #t) (old-load path)))
+  (set! open-input-file
+    (lambda (path)
+      (let ((port (old-open-input-file path)))
+        (%notify-file-open path 'read (input-port? port))
+        port)))
+  (set! open-output-file
+    (lambda (path)
+      (let ((port (old-open-output-file path)))
+        (%notify-file-open path 'write (output-port? port))
+        port))))
+(define *import-path* #f)
+(define (import path)
+  (define import-dirs
+    (if (param "IMPORT_DIR")
+      (split-string (param "IMPORT_DIR") ":")
+      *default-import-search-paths*))
+  (define (do-load path)
+    (let ((*orig-import-path* *import-path*))
+      (set! *import-path* path)
+      (load path)
+      (set! *import-path* *orig-import-path*)))
+  (if (or (= 0 (string-length path)) (eqv? #\/ (string-ref path 0)))
+    (do-load path)
+    (let search ((dirs import-dirs))
+      (if (null? dirs)
+        (throw (string-append "unable to open \"" path "\": not found")))
+      (let* ((try (string-append (car dirs) "/" path))
+             (tried (open-input-file try)))
+        (if tried
+          (begin (close-input-port tried) (do-load try))
+          (search (cdr dirs)))))))
+(define-macro
+  (extends base-profile)
+  `(let ((protobox 'protobox))
+     (cond ((not ,base-profile) (throw "argument expected"))
+           ((eq? ,base-profile protobox) (set! delegate autobox))
+           ((string? ,base-profile) (%extends-builtin ,base-profile))
+           (else (throw "invalid argument" ,base-profile)))))
+(define-macro
+  (%wrap-actions wrapper . rules)
+  `(letrec ((orig-allow allow)
+            (orig-autobox autobox)
+            (orig-delegate delegate)
+            (orig-deny deny))
+     (set! allow (,wrapper orig-allow))
+     (set! autobox (,wrapper orig-autobox))
+     (set! delegate (,wrapper orig-delegate))
+     (set! deny (,wrapper orig-deny))
+     ,@rules
+     (set! deny orig-deny)
+     (set! delegate orig-delegate)
+     (set! autobox orig-autobox)
+     (set! allow orig-allow)))
+(define-macro
+  (with-operations extra-operations . rules)
+  `(letrec ((inject-operations (lambda args (append ,extra-operations args)))
+            (wrapper
+              (lambda (action)
+                (lambda args (apply action (apply inject-operations args))))))
+     (%wrap-actions wrapper ,@rules)))
+(define-macro
+  (with-filter extra-filter . rules)
+  `(letrec ((inject-filter
+              (lambda args
+                (let* ((collected (partition sbpl-filter? args))
+                       (filters (car collected))
+                       (non-filters (cadr collected)))
+                  (if (null? filters)
+                    (cons ,extra-filter non-filters)
+                    (cons (require-all
+                            (apply require-any filters)
+                            ,extra-filter)
+                          non-filters)))))
+            (wrapper
+              (lambda (action)
+                (lambda args (apply action (apply inject-filter args))))))
+     (%wrap-actions wrapper ,@rules)))
+(define-macro
+  (with-modifier extra-modifier . rules)
+  `(letrec ((inject-modifier (lambda args (cons ,extra-modifier args)))
+            (wrapper
+              (lambda (action)
+                (lambda args (apply action (apply inject-modifier args))))))
+     (%wrap-actions wrapper ,@rules)))
+(define-macro
+  (sbpl-message-filter . rules)
+  `(let ((delegate
+           (lambda args
+             (error "delegation not supported in message filters"))))
+     (%sbpl-enter-message-filter-context)
+     ,@rules
+     (%sbpl-leave-message-filter-context)))
+(define-macro
+  (apply-message-filter . args)
+  (let* ((msgfilter
+           (if (sbpl-message-filter? (car args))
+             (if (null? (cdr args))
+               (car args)
+               (error "unexpected argument" (cdr args)))
+             (macro-expand (cons sbpl-message-filter args)))))
+    `(with message-filter ,msgfilter)))
+(define-macro
+  (sbpl-message-filter-update! msgfilter . rules)
+  `(let ((delegate
+           (lambda args
+             (error "delegation not supported in message filters"))))
+     (%sbpl-enter-message-filter-context ,msgfilter)
+     ,@rules
+     (%sbpl-leave-message-filter-context)))
+(define (path-ancestors . paths)
+  (letrec ((find-all-pos-of-char
+             (lambda (str char pos)
+               (cond ((>= pos (string-length str)) '())
+                     ((char=? char (string-ref str pos))
+                      (cons pos (find-all-pos-of-char str char (+ pos 1))))
+                     (else (find-all-pos-of-char str char (+ pos 1))))))
+           (start-with-slash? (lambda (s) (eqv? (string-ref s 0) #\/)))
+           (start-with-variable? (lambda (s) (equal? (substring s 0 2) "${")))
+           (end-with-slash?
+             (lambda (s) (eqv? (string-ref s (- (string-length s) 1)) #\/)))
+           (ensure-trailing-slash
+             (lambda (path)
+               (if (end-with-slash? path) path (string-append path "/"))))
+           (dirhierarchy-list
+             (lambda (short long)
+               (map (lambda (pos)
+                      (cond ((= pos 0) "/") (else (substring long 0 pos))))
+                    (find-all-pos-of-char
+                      (ensure-trailing-slash long)
+                      #\/
+                      (- (string-length short) 1)))))
+           (drop-last (lambda (l) (reverse (cdr (reverse l)))))
+           (parentdirs-list (lambda (p) (drop-last (dirhierarchy-list "/" p))))
+           (ancestor-filter
+             (lambda (p)
+               (if (or (start-with-slash? p) (start-with-variable? p))
+                 (apply require-any (map literal (parentdirs-list p)))
+                 (error "path must start with a /")))))
+    (apply require-any (map ancestor-filter paths))))
+(define (entitlement-value arg)
+  (cond ((string? arg) (%entitlement-string arg))
+        ((boolean? arg) (%entitlement-boolean arg))
+        (else (error "entitlement-value argument must be string or boolean"))))
+(define (entitlement-value-regex arg)
+  (cond ((string? arg) (%entitlement-string-regex arg))
+        (else (error "entitlement-value-regex argument must be string"))))
+(define (require-entitlement entitlement-name . args)
+  (let ((numargs (length args)))
+    (cond ((zero? numargs) (%entitlement-is-bool-true entitlement-name))
+          ((= 1 numargs)
+           (let ((filter (car args)))
+             (if (equal? filter (%entitlement-boolean #t))
+               (%entitlement-is-bool-true entitlement-name)
+               (require-all (%entitlement-load entitlement-name) filter))))
+          (else (error "too many arguments to require-entitlement")))))
+(define %storage-class-names ())
+(define (define-storage-class class-name filter)
+  (if (member class-name %storage-class-names)
+    (error (string-append "storage class \"" class-name "\" multiply defined")
+           class-name)
+    (begin
+      (set! %storage-class-names (cons class-name %storage-class-names))
+      (extend-storage-class class-name filter))))
+(define (extend-storage-class class-name filter)
+  (unless
+    (member class-name %storage-class-names)
+    (error (string-append "storage class \"" class-name "\" is not defined")
+           class-name))
+  (allow (with assign-storage-class class-name) storage-class-map filter))
+(define (apply-default-sandbox-profile profile filter)
+  (allow process-exec-update-label (with default-sandbox profile) filter))
+(define (no-default-sandbox-profile filter)
+  (allow process-exec-update-label filter))
+(define (_IO g n) (+ n (* 256 (char->integer (car (string->list g))))))
+(define literal path)
+(define prefix path-prefix)
+(define regex path-regex)
+(define mount-relative-literal mount-relative-path)
+(define mount-relative-regex mount-relative-path-regex)
+(define fileprovider-syncroot-literal fileprovider-syncroot-path)
+(define fileprovider-syncroot-regex fileprovider-syncroot-path-regex)
+(define mount-root-literal mount-root-path)
+(define mount-root-regex mount-root-path-regex)
+(define process-exec process-exec*)
+(define ipc-posix-shm-read* ipc-posix-shm-read-data)
+(define (executable-bundle) (extension *sandbox-executable-bundle*))
+(define (container) (extension *ios-sandbox-container*))
+(define (application-group) (extension *ios-sandbox-application-group*))
+(define (system-container) (extension *ios-sandbox-system-container*))
+(define (system-group) (extension *ios-sandbox-system-group*))
+(define iokit-user-client-class iokit-registry-entry-class)
+(define iokit-user-client-class-regex iokit-registry-entry-class-regex)
+(unless
+  (defined? 'mach_vm_reclaim_update_kernel_accounting_trap)
+  (define MSC_mach_vm_reclaim_update_kernel_accounting_trap 63))
+(define sysctl-write sysctl*)
+(define (syscall-group-aio-read)
+  (syscall-number SYS_aio_error SYS_aio_read SYS_aio_return))
+(define (syscall-group-aio-write)
+  (syscall-number
+    SYS_aio_cancel
+    SYS_aio_fsync
+    SYS_aio_suspend
+    SYS_aio_suspend_nocancel
+    SYS_aio_write))
+(define (syscall-group-audit-session)
+  (syscall-number
+    SYS_audit_session_join
+    SYS_audit_session_port
+    SYS_audit_session_self))
+(define (syscall-group-bsdthread)
+  (syscall-number
+    SYS_bsdthread_create
+    SYS_bsdthread_ctl
+    SYS_bsdthread_register
+    SYS_bsdthread_terminate))
+(define (syscall-group-chflags) (syscall-number SYS_chflags SYS_fchflags))
+(define (syscall-group-close)
+  (syscall-number SYS_close SYS_close_nocancel SYS_guarded_close_np))
+(define (syscall-group-fcntl) (syscall-number SYS_fcntl SYS_fcntl_nocancel))
+(define (syscall-group-file-handle) (syscall-number SYS_fhopen SYS_getfh))
+(define (syscall-group-getfsstat)
+  (syscall-number SYS_getfsstat SYS_getfsstat64))
+(define (syscall-group-kdebug)
+  (syscall-number
+    SYS_kdebug_trace
+    SYS_kdebug_trace_string
+    SYS_kdebug_trace64
+    SYS_kdebug_typefilter))
+(define (syscall-group-kevent)
+  (syscall-number SYS_kevent SYS_kevent64 SYS_kevent_id SYS_kevent_qos))
+(define (syscall-group-kqueue)
+  (syscall-number SYS_guarded_kqueue_np SYS_kqueue SYS_kqueue_workloop_ctl))
+(define (syscall-group-mach-eventlink)
+  (syscall-number
+    SYS_mach_eventlink_signal
+    SYS_mach_eventlink_signal_wait_until
+    SYS_mach_eventlink_wait_until))
+(define (syscall-group-mkdir)
+  (syscall-number SYS_mkdir SYS_mkdir_extended SYS_mkdirat))
+(define (syscall-group-necp-client)
+  (syscall-number SYS_necp_client_action SYS_necp_open))
+(define (syscall-group-necp-session)
+  (syscall-number SYS_necp_session_action SYS_necp_session_open))
+(define (syscall-group-network-channel)
+  (syscall-number
+    SYS___channel_get_info
+    SYS___channel_get_opt
+    SYS___channel_open
+    SYS___channel_set_opt
+    SYS___channel_sync))
+(define (syscall-group-nexus)
+  (syscall-number
+    SYS___nexus_open
+    SYS___nexus_register
+    SYS___nexus_deregister
+    SYS___nexus_create
+    SYS___nexus_destroy
+    SYS___nexus_get_opt
+    SYS___nexus_set_opt))
+(define (syscall-group-open) (syscall-number SYS_guarded_open_np))
+(define (syscall-group-open-dprotected)
+  (syscall-number
+    SYS_guarded_open_dprotected_np
+    SYS_open_dprotected_np
+    SYS_openat_dprotected_np))
+(define (syscall-group-pthread-locks)
+  (require-any
+    (syscall-group-ulock)
+    (syscall-number
+      SYS_psynch_mutexdrop
+      SYS_psynch_mutexwait
+      SYS_psynch_rw_downgrade
+      SYS_psynch_rw_longrdlock
+      SYS_psynch_rw_rdlock
+      SYS_psynch_rw_unlock
+      SYS_psynch_rw_unlock2
+      SYS_psynch_rw_upgrade
+      SYS_psynch_rw_wrlock
+      SYS_psynch_rw_yieldwrlock)))
+(define (syscall-group-pthread-cv)
+  (require-any
+    (syscall-group-pthread-locks)
+    (syscall-number
+      SYS_psynch_cvbroad
+      SYS_psynch_cvclrprepost
+      SYS_psynch_cvsignal
+      SYS_psynch_cvwait)))
+(define (syscall-group-pthread)
+  (require-any
+    (syscall-group-pthread-cv)
+    (syscall-number
+      SYS___pthread_canceled
+      SYS___pthread_chdir
+      SYS___pthread_fchdir
+      SYS___pthread_kill
+      SYS___pthread_markcancel
+      SYS___pthread_sigmask)))
+(define (syscall-group-read)
+  (syscall-number
+    SYS_pread
+    SYS_pread_nocancel
+    SYS_preadv
+    SYS_preadv_nocancel
+    SYS_read
+    SYS_read_nocancel
+    SYS_readv
+    SYS_readv_nocancel))
+(define (syscall-group-recv)
+  (syscall-number
+    SYS_recvmsg
+    SYS_recvmsg_nocancel
+    SYS_recvfrom
+    SYS_recvfrom_nocancel))
+(define (syscall-group-rlimit)
+  (syscall-number SYS_getrlimit SYS_proc_rlimit_control SYS_setrlimit))
+(define (syscall-group-select)
+  (syscall-number
+    SYS_pselect
+    SYS_pselect_nocancel
+    SYS_select
+    SYS_select_nocancel))
+(define (syscall-group-send)
+  (syscall-number
+    SYS_sendmsg
+    SYS_sendmsg_nocancel
+    SYS_sendto
+    SYS_sendto_nocancel))
+(define (syscall-group-signal)
+  (syscall-number
+    SYS___sigwait
+    SYS___sigwait_nocancel
+    SYS_sigaction
+    SYS_sigaltstack
+    SYS_sigpending
+    SYS_sigprocmask
+    SYS_sigreturn
+    SYS_sigsuspend
+    SYS_sigsuspend_nocancel))
+(define (syscall-group-sockopt) (syscall-number SYS_getsockopt SYS_setsockopt))
+(define (syscall-group-stat)
+  (syscall-number
+    SYS_fstat
+    SYS_fstat64
+    SYS_fstat64_extended
+    SYS_fstat_extended
+    SYS_fstatat
+    SYS_fstatat64
+    SYS_lstat
+    SYS_lstat64
+    SYS_lstat64_extended
+    SYS_lstat_extended
+    SYS_stat
+    SYS_stat64
+    SYS_stat64_extended
+    SYS_stat_extended))
+(define (syscall-group-statfs)
+  (syscall-number SYS_fstatfs SYS_fstatfs64 SYS_statfs SYS_statfs64))
+(define (syscall-group-ulock)
+  (syscall-number SYS_ulock_wait SYS_ulock_wait2 SYS_ulock_wake))
+(define (syscall-group-write)
+  (syscall-number
+    SYS_guarded_pwrite_np
+    SYS_guarded_write_np
+    SYS_guarded_writev_np
+    SYS_pwrite
+    SYS_pwrite_nocancel
+    SYS_pwritev
+    SYS_pwritev_nocancel
+    SYS_write
+    SYS_write_nocancel
+    SYS_writev
+    SYS_writev_nocancel))
+(define checkfix-140170642)
+(define disable-syscall-inference ())
+(define disable-networking-inference ())
+(let* ((allowed? (lambda (op) (sbpl-operation-can-return? op 'allow)))
+       (denied? (lambda (op) (sbpl-operation-can-return? op 'deny)))
+       (infer-syscalls-from-sandbox-operations
+         (lambda ()
+           (when (allowed? file-chroot)
+                 (allow syscall-unix (syscall-number SYS_chroot)))
+           (when (allowed? file-clone)
+                 (allow syscall-unix
+                        (syscall-number SYS_clonefileat SYS_fclonefileat)))
+           (when (allowed? file-ioctl)
+                 (allow syscall-unix (syscall-number SYS_ioctl)))
+           (when (allowed? file-link)
+                 (allow syscall-unix (syscall-number SYS_link SYS_linkat)))
+           (when (allowed? file-mknod)
+                 (allow syscall-unix (syscall-number SYS_mknod)))
+           (when (allowed? file-mount)
+                 (allow syscall-unix (syscall-number SYS_mount SYS_fmount)))
+           (when (or (allowed? file-read-data) (allowed? file-write-create))
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_open
+                          SYS_open_nocancel
+                          SYS_openat
+                          SYS_openat_nocancel
+                          SYS_close
+                          SYS_close_nocancel)))
+           (when (allowed? file-revoke)
+                 (allow syscall-unix (syscall-number SYS_revoke)))
+           (when (allowed? file-search)
+                 (allow syscall-unix (syscall-number SYS_searchfs)))
+           (when (allowed? file-unmount)
+                 (allow syscall-unix (syscall-number SYS_unmount)))
+           (when (allowed? file-write-acl)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_chmod_extended
+                          SYS_fchmod_extended)))
+           (when (allowed? file-write-data)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_pwrite
+                          SYS_pwrite_nocancel
+                          SYS_pwritev
+                          SYS_pwritev_nocancel
+                          SYS_write
+                          SYS_write_nocancel
+                          SYS_writev
+                          SYS_writev_nocancel
+                          SYS_close
+                          SYS_close_nocancel)))
+           (when (allowed? file-write-flags)
+                 (allow syscall-unix
+                        (syscall-number SYS_chflags SYS_fchflags)))
+           (when (or (allowed? file-write-mode) (allowed? file-write-setugid))
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_chmod
+                          SYS_chmod_extended
+                          SYS_fchmod
+                          SYS_fchmod_extended
+                          SYS_fchmodat)))
+           (when (allowed? file-write-owner)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_chown
+                          SYS_fchown
+                          SYS_fchownat
+                          SYS_lchown)))
+           (when (allowed? file-write-times)
+                 (allow syscall-unix (syscall-number SYS_futimes SYS_utimes)))
+           (when (allowed? file-write-unlink)
+                 (allow syscall-unix (syscall-number SYS_unlink SYS_unlinkat)))
+           (when (allowed? file-write-xattr)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_setxattr
+                          SYS_removexattr
+                          SYS_fsetxattr
+                          SYS_fremovexattr)))
+           (when (or (allowed? fs-snapshot-create)
+                     (allowed? fs-snapshot-delete)
+                     (allowed? fs-snapshot-revert))
+                 (allow syscall-unix (syscall-number SYS_fs_snapshot)))
+           (when (or (allowed? fs-quota-get)
+                     (allowed? fs-quota-on)
+                     (allowed? fs-quota-off)
+                     (allowed? fs-quota-set-limits)
+                     (allowed? fs-quota-set-usage)
+                     (allowed? fs-quota-stat)
+                     (allowed? fs-quota-sync))
+                 (allow syscall-unix (syscall-number SYS_quotactl)))
+           (when (allowed? iokit-open-user-client)
+                 (allow syscall-mach
+                        (machtrap-number MSC_iokit_user_client_trap)))
+           (when (or (allowed? ipc-posix-sem-create)
+                     (allowed? ipc-posix-sem-open))
+                 (allow syscall-unix
+                        (syscall-number SYS_sem_open SYS_sem_close)))
+           (when (allowed? ipc-posix-sem-post)
+                 (allow syscall-unix (syscall-number SYS_sem_post)))
+           (when (allowed? ipc-posix-sem-unlink)
+                 (allow syscall-unix (syscall-number SYS_sem_unlink)))
+           (when (allowed? ipc-posix-sem-wait)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_sem_trywait
+                          SYS_sem_wait
+                          SYS_sem_wait_nocancel)))
+           (when (or (allowed? ipc-posix-shm-read-data)
+                     (allowed? ipc-posix-shm-write-create)
+                     (allowed? ipc-posix-shm-write-data))
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_shm_open
+                          SYS_close
+                          SYS_close_nocancel)))
+           (when (allowed? ipc-posix-shm-write-unlink)
+                 (allow syscall-unix (syscall-number SYS_shm_unlink)))
+           (when (allowed? ipc-sysv-msg)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_msgctl
+                          SYS_msgget
+                          SYS_msgrcv
+                          SYS_msgrcv_nocancel
+                          SYS_msgsnd
+                          SYS_msgsnd_nocancel)))
+           (when (allowed? ipc-sysv-sem)
+                 (allow syscall-unix
+                        (syscall-number SYS_semctl SYS_semget SYS_semop)))
+           (when (allowed? ipc-sysv-shm)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_shmat
+                          SYS_shmctl
+                          SYS_shmdt
+                          SYS_shmget)))
+           (unless
+             (sbpl-version-compatible? 2)
+             (when (allowed? necp-client-open)
+                   (allow syscall-unix (syscall-number SYS_necp_open))))
+           (when (allowed? network-bind)
+                 (allow syscall-unix (syscall-number SYS_bind)))
+           (when (allowed? network-outbound)
+                 (allow syscall-unix
+                        (syscall-number
+                          SYS_connect
+                          SYS_connect_nocancel
+                          SYS_connectx)))
+           (when (or (allowed? process-codesigning-status-set)
+                     (allowed? process-codesigning-status-get)
+                     (allowed? process-codesigning-text-offset-get)
+                     (allowed? process-codesigning-cdhash-get)
+                     (allowed? process-codesigning-entitlements-blob-get)
+                     (allowed? process-codesigning-entitlements-der-blob-get)
+                     (allowed? process-codesigning-blob-get)
+                     (allowed? process-codesigning-identity-get)
+                     (allowed? process-codesigning-teamid-get)
+                     (allowed? process-info-codesignature))
+                 (allow syscall-unix
+                        (syscall-number SYS_csops SYS_csops_audittoken)))
+           (when (allowed? process-fork)
+                 (allow syscall-unix (syscall-number SYS_fork)))
+           (when (or (allowed? process-info-codesignature)
+                     (allowed? process-info-dirtycontrol)
+                     (allowed? process-info-listpids)
+                     (allowed? process-info-rusage)
+                     (allowed? process-info-pidinfo)
+                     (allowed? process-info-pidfdinfo)
+                     (allowed? process-info-pidfileportinfo)
+                     (allowed? process-info-setcontrol))
+                 (allow syscall-unix (syscall-number SYS_proc_info)))
+           (when (allowed? signal)
+                 (allow syscall-unix (syscall-number SYS_kill)))
+           (when (allowed? socket-ioctl)
+                 (allow syscall-unix (syscall-number SYS_ioctl)))
+           (unless
+             (sbpl-version-compatible? 1)
+             (when (allowed? socket-option-get)
+                   (allow syscall-unix (syscall-number SYS_getsockopt)))
+             (when (allowed? socket-option-set)
+                   (allow syscall-unix (syscall-number SYS_setsockopt))))
+           (when (or (allowed? sysctl-read) (allowed? sysctl-write))
+                 (allow syscall-unix
+                        (syscall-number SYS_sysctl SYS_sysctlbyname)))
+           (when (allowed? system-acct)
+                 (allow syscall-unix (syscall-number SYS_acct)))
+           (when (allowed? system-nfssvc)
+                 (allow syscall-unix (syscall-number SYS_nfssvc)))
+           (when (allowed? system-debug)
+                 (allow syscall-unix (syscall-number SYS_ptrace)))
+           (unless
+             (sbpl-version-compatible? 1)
+             (when (or (allowed? system-fcntl) (allowed? system-package-check))
+                   (allow syscall-unix
+                          (syscall-number SYS_fcntl SYS_fcntl_nocancel))))
+           (when (allowed? system-fsctl)
+                 (allow syscall-unix (syscall-number SYS_ffsctl SYS_fsctl)))
+           (unless
+             (sbpl-version-compatible? 1)
+             (when (allowed? system-mac-syscall)
+                   (allow syscall-unix (syscall-number SYS___mac_syscall))))
+           (unless
+             (sbpl-version-compatible? 2)
+             (when (allowed? system-memorystatus-control)
+                   (allow syscall-unix
+                          (syscall-number SYS_memorystatus_control))))
+           (unless
+             (sbpl-version-compatible? 2)
+             (when (allowed? system-necp-client-action)
+                   (allow syscall-unix
+                          (syscall-number SYS_necp_client_action))))
+           (when (allowed? system-reboot)
+                 (allow syscall-unix (syscall-number SYS_reboot)))
+           (when (allowed? system-sched)
+                 (allow syscall-unix
+                        (syscall-number SYS_getpriority SYS_setpriority)))
+           (when (allowed? system-socket)
+                 (allow syscall-unix (syscall-number SYS_socket)))
+           (when (allowed? system-suspend-resume)
+                 (allow syscall-unix
+                        (syscall-number SYS_pid_resume SYS_pid_suspend)))
+           (when (allowed? system-swap)
+                 (allow syscall-unix (syscall-number SYS_swapon)))))
+       (syscall-inference? #t)
+       (%disable-syscall-inference (lambda () (set! syscall-inference? #f)))
+       (infer-networking-rules-from-sandbox-operations
+         (lambda ()
+           (when (allowed? network-outbound)
+                 (allow network-outbound
+                        (control-name "com.apple.flow-divert")))))
+       (enable-networking-inference? #t)
+       (%disable-networking-inference
+         (lambda () (set! enable-networking-inference? #f)))
+       (orig-finalize %finalize)
+       (apply-policy-before-finalize
+         (lambda ()
+           (when *apply-implicit-policy*
+                 (allow signal (target self))
+                 (allow mach-task-name
+                        mach-task-inspect
+                        mach-task-read
+                        (target self))
+                 (allow mach-task-special-port-get (target self))
+                 (when syscall-inference?
+                       (allow syscall-unix
+                              (syscall-number
+                                SYS_getgid
+                                SYS_getpid
+                                SYS_getuid
+                                SYS_issetugid
+                                SYS_umask))
+                       (allow syscall-unix
+                              (syscall-number
+                                SYS___pthread_kill
+                                SYS_abort_with_payload
+                                SYS_exit
+                                SYS_terminate_with_payload))
+                       (allow syscall-mig
+                              (kernel-mig-routine
+                                mach_exception_raise
+                                mach_exception_raise_state
+                                mach_exception_raise_state_identity)))
+                 (when syscall-inference?
+                       (infer-syscalls-from-sandbox-operations))
+                 (when enable-networking-inference?
+                       (infer-networking-rules-from-sandbox-operations))
+                 (when (allowed? qtn-user)
+                       (deny qtn-exec-no-quarantine
+                             (require-not
+                               (require-ancestor-with-entitlement
+                                 "com.apple.security.files.user-selected.executable"))))
+                 (when (allowed? storage-class-map)
+                       (error "storage class definition not permitted in this context")))
+           (orig-finalize))))
+  (set! disable-syscall-inference %disable-syscall-inference)
+  (set! disable-networking-inference %disable-networking-inference)
+  (set! %finalize apply-policy-before-finalize))
+(let* ((orig-path path)
+       (orig-path-prefix path-prefix)
+       (orig-subpath subpath)
+       (orig-path-regex path-regex)
+       (orig-process-path process-path)
+       (orig-process-path-prefix process-path-prefix)
+       (orig-process-subpath process-subpath)
+       (orig-process-path-regex process-path-regex)
+       (string-ci-prefix?
+         (lambda (pattern str)
+           (let ((plen (string-length pattern)))
+             (and (<= plen (string-length str))
+                  (string-ci=? pattern (substring str 0 plen))))))
+       (dvmp "/System/Volumes/Data")
+       (dvmplen (string-length dvmp))
+       (translate-string
+         (lambda (p)
+           (cond ((string-ci=? dvmp p) "/")
+                 ((string-ci-prefix? (string-append dvmp "/") p)
+                  (substring p dvmplen))
+                 (else p))))
+       (translate-regex
+         (lambda (p)
+           (let* ((dvmp-anchor (string-append "^" (regex-quote dvmp)))
+                  (dvmp-anchor-len (string-length dvmp-anchor))
+                  (dvmp-literal (string-append dvmp-anchor "$"))
+                  (dvmp-content (string-append dvmp-anchor "/"))
+                  (dvmp-subpath1 (string-append dvmp-anchor "($|/)"))
+                  (dvmp-subpath2 (string-append dvmp-anchor "(/|$)")))
+             (cond ((string-ci=? dvmp-literal p) "^/$")
+                   ((string-ci=? dvmp-content p) "^/")
+                   ((string-ci=? dvmp-subpath1 p) "^/")
+                   ((string-ci=? dvmp-subpath2 p) "^/")
+                   ((string-ci-prefix? dvmp-content p)
+                    (string-append "^" (substring p dvmp-anchor-len)))
+                   (else p)))))
+       (apply-root-translation-to-path
+         (lambda (orig-filter)
+           (lambda p (apply orig-filter (map translate-string p)))))
+       (apply-root-translation-to-regex
+         (lambda (orig-filter)
+           (lambda p (apply orig-filter (map translate-regex p))))))
+  (set! path (apply-root-translation-to-path path))
+  (set! path-prefix (apply-root-translation-to-path path-prefix))
+  (set! subpath (apply-root-translation-to-path subpath))
+  (set! path-regex (apply-root-translation-to-regex path-regex))
+  (set! process-path (apply-root-translation-to-path process-path))
+  (set! process-path-prefix
+    (apply-root-translation-to-path process-path-prefix))
+  (set! process-subpath (apply-root-translation-to-path process-subpath))
+  (set! process-path-regex
+    (apply-root-translation-to-regex process-path-regex))
+  (set! literal (apply-root-translation-to-path path))
+  (set! prefix (apply-root-translation-to-path path-prefix))
+  (set! regex (apply-root-translation-to-path path-regex)))
+(allow consume-extension)
+(allow darwin-notification-post)
+(allow dynamic-code-generation)
+(allow file-clone)
+(allow file-graft)
+(allow file-link)
+(allow file-lock)
+(allow file-map-executable)
+(allow file-test-existence)
+(allow file-ungraft)
+(allow fs-quota*)
+(allow fs-snapshot-mount)
+(allow iokit-get-properties)
+(allow iokit-open-service)
+(allow mach-bootstrap)
+(allow mach-cross-domain-lookup)
+(allow mach-task-exception-port-set)
+(allow mach-task-special-port*)
+(allow necp-client-open)
+(allow nvram*)
+(allow process-info*)
+(allow process-info-codesignature)
+(allow process-info-sandbox-container)
+(allow process-iopolicy*)
+(allow sandbox-check)
+(allow socket-ioctl)
+(allow socket-option-get)
+(allow socket-option-set)
+(allow syscall-mach)
+(allow syscall-mig)
+(allow syscall-unix)
+(allow system-fcntl)
+(allow system-mac-syscall)
+(allow system-memorystatus-control)
+(allow system-necp-client-action)
+(define (trace path))
+(define no-callout
+  (list 'deprecated
+        (lambda args
+          (if (= 0 (length args))
+            (disable-callouts)
+            (error "unexpected argument")))))
+(define partial-symbolication
+  (list 'deprecated
+        (lambda args
+          (if (= 0 (length args))
+            (disable-full-symbolication)
+            (error "unexpected argument")))))
+(define-macro (debug . args))
+(define getenv param)
+(define file-fsctl system-fsctl)
+(define iokit-open iokit-open-user-client)
+(define ipc-posix-sem ipc-posix-sem*)
+(define ipc-posix-shm ipc-posix-shm*)
+(define system-misc system*)
+(define time-set system-set-time)
+(define from local)
+(define to remote)
+(define no-profile no-sandbox)
+(define no-log no-report)
+(define granted-extensions extension)
+(define (eliminate-duplicate-rules))
+(define (record path))
+(define file-issue-extension* file-issue-extension)
+(define file-issue-extension-read file-issue-extension)
+(define file-issue-extension-write file-issue-extension)
+(define file-unlink file-write-unlink)
+(define mach-extension extension)
+(define (tty) (vnode-type TTY))
+(define file-write-mount file-mount)
+(define file-write-unmount file-unmount)
+(define file-write-umount file-unmount)
+(define rootless-modifier sip-override)
+(define rootless sip-override)
+(define (debug-mode) (system-attribute sandbox-debug-mode))
+(define managed-preference* managed-preference-read)
+(define (process-is-plugin) (process-attribute is-plugin))
+(define (process-is-installer) (process-attribute is-installer))
+(define (datavault-file-filter) (file-attribute datavault))
+(define (rootless-file-filter) (file-attribute sip-protected))
+(define ipc-posix-issue-extension 'no-op)
+(define ipc-posix-shm-read-metadata 'no-op)
+(define mach-per-user-lookup 'no-op)
+(define system-chud 'no-op)
+(define qtn-download 'no-op)
+(define load-unsigned-code 'no-op)
+(define process-codesigning* process-legacy-codesigning*)
+(define process-codesigning-blob-get process-legacy-codesigning-blob-get)
+(define process-codesigning-cdhash-get process-legacy-codesigning-cdhash-get)
+(define process-codesigning-entitlements-blob-get
+  process-legacy-codesigning-entitlements-blob-get)
+(define process-codesigning-entitlements-der-blob-get
+  process-legacy-codesigning-entitlements-der-blob-get)
+(define process-codesigning-identity-get
+  process-legacy-codesigning-identity-get)
+(define process-codesigning-status* process-legacy-codesigning-status*)
+(define process-codesigning-status-get process-legacy-codesigning-status-get)
+(define process-codesigning-status-set process-legacy-codesigning-status-set)
+(define process-codesigning-teamid-get process-legacy-codesigning-teamid-get)
+(define process-codesigning-text-offset-get
+  process-legacy-codesigning-text-offset-get)
+(define mach-kernel-endpoint 'no-op)
+(unless
+  (defined? 'APFSIOC_GET_GRAFT_INFO)
+  (define APFSIOC_GET_GRAFT_INFO FSIOC_GET_GRAFT_INFO))
+(define unix 'unix)
+(define unix-socket unix)
+(define path-literal path)
+(allow consume-extension)
+(allow file-graft)
+(allow file-lock)
+(allow file-ungraft)
+(allow mach-task-exception-port-set)
+(allow mach-task-special-port*)
+(allow necp-client-open)
+(allow process-info-sandbox-container)
+(allow process-iopolicy*)
+(allow sandbox-check)
+(allow syscall-mig)
+(allow system-memorystatus-control)
+(allow system-necp-client-action)
+(define ipc-posix-issue-extension 'no-op)
+(define process-codesigning* process-legacy-codesigning*)
+(define process-codesigning-blob-get process-legacy-codesigning-blob-get)
+(define process-codesigning-cdhash-get process-legacy-codesigning-cdhash-get)
+(define process-codesigning-entitlements-blob-get
+  process-legacy-codesigning-entitlements-blob-get)
+(define process-codesigning-entitlements-der-blob-get
+  process-legacy-codesigning-entitlements-der-blob-get)
+(define process-codesigning-identity-get
+  process-legacy-codesigning-identity-get)
+(define process-codesigning-status* process-legacy-codesigning-status*)
+(define process-codesigning-status-get process-legacy-codesigning-status-get)
+(define process-codesigning-status-set process-legacy-codesigning-status-set)
+(define process-codesigning-teamid-get process-legacy-codesigning-teamid-get)
+(define process-codesigning-text-offset-get
+  process-legacy-codesigning-text-offset-get)
+(define mach-kernel-endpoint 'no-op)
+(unless
+  (defined? 'APFSIOC_GET_GRAFT_INFO)
+  (define APFSIOC_GET_GRAFT_INFO FSIOC_GET_GRAFT_INFO))
+(allow consume-extension)
+(allow file-graft)
+(allow file-lock)
+(allow file-ungraft)
+(allow mach-task-exception-port-set)
+(allow mach-task-special-port*)
+(allow process-info-sandbox-container)
+(allow process-iopolicy*)
+(allow sandbox-check)
+(allow syscall-mig)
+(define ipc-posix-issue-extension 'no-op)
+(define process-codesigning* process-legacy-codesigning*)
+(define process-codesigning-blob-get process-legacy-codesigning-blob-get)
+(define process-codesigning-cdhash-get process-legacy-codesigning-cdhash-get)
+(define process-codesigning-entitlements-blob-get
+  process-legacy-codesigning-entitlements-blob-get)
+(define process-codesigning-entitlements-der-blob-get
+  process-legacy-codesigning-entitlements-der-blob-get)
+(define process-codesigning-identity-get
+  process-legacy-codesigning-identity-get)
+(define process-codesigning-status* process-legacy-codesigning-status*)
+(define process-codesigning-status-get process-legacy-codesigning-status-get)
+(define process-codesigning-status-set process-legacy-codesigning-status-set)
+(define process-codesigning-teamid-get process-legacy-codesigning-teamid-get)
+(define process-codesigning-text-offset-get
+  process-legacy-codesigning-text-offset-get)
+(define mach-kernel-endpoint 'no-op)
+(unless
+  (defined? 'APFSIOC_GET_GRAFT_INFO)
+  (define APFSIOC_GET_GRAFT_INFO FSIOC_GET_GRAFT_INFO))
+o/}7~K
+v<y^yey
+n"onq+r"t
+x>yIyHyPyVy]y
+XDYTYbZ([
+dRdVetf
+=N8NAN6
+MQTQdQwQ8
+4;RFRrRwR
+SISQSZSsS}S
+T8THThT
+Y"YbY>
+[>[>[@
+n]k]|]
+](^=^i^b8D
+`HaLaNaLaza
+c.:id~d
+dwdl:OeleM
+g!g^gSgN
+TkN<rk
+m>mwmAmimxm
+4m/nnn3=
+=Jp}pwp
+(r5rPr]
+>Gt\tqt
+y/A@zJzOzn
+~E~4Ct

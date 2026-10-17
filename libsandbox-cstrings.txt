@@ -1,0 +1,4109 @@
+<internal>
+gensym-%ld
+gensym
+scheme.c
+(long)snprintf(name,sizeof(name),"gensym-%ld",sc->gensym_cnt) < (long)sizeof(name)
+gc_unprotect
+pop != 0
+scheme_backtrace
+is_bt_pointer(bt)
+#sink
+#NIL
+#T
+#F
+#EOF_OBJ
+#TOPLEVEL
+else
+lambda
+quote
+define
+if
+begin
+set!
+let
+let*
+letrec
+cond
+delay
+and
+or
+cons-stream
+case
+quasiquote
+unquote
+unquote-splicing
+=>
+*colon-hook*
+*error-hook*
+*sharp-hook*
+size_t scheme_write_to_file(scheme *, pointer, FILE *)
+gc...
+done: %ld cells were recovered.\n
+requested vector size (%lu) larger than allowed maximum (%ld)
+mk_vector
+snprintf(sc->strbuff, sizeof(sc->strbuff), "requested vector size (%lu) " "larger than allowed maximum (%ld)", len, (CELL_SEGSIZE-1)*2) < (int)sizeof(sc->strbuff)
+load
+
+load-rewind
+
+make-closure
+
+defined?
+
+eval
+
+apply
+call-with-current-continuation
+
+-
+quotient
+
+remainder
+modulo
+
+cons
+set-car!
+
+set-cdr!
+char->integer
+\n
+integer->char
+
+char-upcase
+char-downcase
+symbol->string
+
+atom->string
+
+string->symbol
+string->atom
+make-string
+\n
+string-length
+string-ref
+string-set!
+\n
+string-append
+substring
+internal-strcmp
+
+internal-strchr
+\n
+split-string
+
+make-vector
+
+vector-length
+
+vector-ref
+
+vector-set!
+
+not
+boolean?
+eof-object?
+null?
+=
+<
+>
+<=
+>=
+symbol?
+number?
+string?
+integer?
+real?
+char?
+port?
+input-port?
+output-port?
+procedure?
+pair?
+list?
+environment?
+vector?
+eq?
+eqv?
+force
+
+write-char
+\n
+display
+newline
+
+reverse
+\t
+list*
+append
+put
+get
+quit
+gc
+gc-verbose
+new-segment
+oblist
+current-input-port
+current-output-port
+error-port
+open-input-file
+open-output-file
+open-input-output-file
+open-input-string
+open-output-string
+open-input-output-string
+close-input-port
+
+close-output-port
+interaction-environment
+current-environment
+read-char
+peek-char
+char-ready?
+set-input-port
+set-output-port
+length
+assq
+get-closure-code
+closure?
+macro?
+enable-backtraces
+attempt to rewind over backtrace top
+Loading %s\n
+unable to open %s: %s
+> 
+\nGives: 
+unbound variable:
+opexe_0
+not enough arguments
+syntax error in closure: not a symbol:
+illegal function
+define: unable to alter immutable
+variable is not a symbol
+set!: unable to alter immutable variable
+set!: unbound variable:
+%d: illegal operator
+ \n\t
+ tfodxb\
+syntax error in cond
+/: division by zero
+quotient: division by zero
+remainder: division by zero
+modulo: division by zero
+set-car!: unable to alter immutable pair
+set-cdr!: unable to alter immutable pair
+atom->string: not an atom:
+string-ref: out of bounds:
+string-set!: unable to alter immutable string:
+string-set!: out of bounds:
+substring: start out of bounds:
+substring: end out of bounds:
+split-string: out of memory
+vector: not a proper list:
+vector-ref: out of bounds:
+vector-set!: unable to alter immutable vector:
+vector-set!: out of bounds:
+return
+tab
+%x
+illegal hex code expression
+illegal character expression
+illegal sharp expression
+integer sharp constant out of bounds
+numeric literal out of bounds
+()
+#t
+#f
+<toplevel>
+#<EOF>
+atom2str
+%ld
+snprintf(p, psz, "%ld", ivalue_unchecked(l)) < psz
+%.10g
+snprintf(p, psz, "%.10g", rvalue_unchecked(l)) < psz
+#\newline
+#\return
+#\x%x
+snprintf(p,psz,"#\\x%x",c) < psz
+#\%c
+snprintf(p,psz,"#\\%c",c) < psz
+#<BT FRAME POINTER>
+#<%s PROCEDURE %ld>
+snprintf(p, psz, "#<%s PROCEDURE %ld>", procname(l),procnum(l)) < psz
+#<MACRO>
+#<CLOSURE %p>
+snprintf(p, psz, "#<CLOSURE %p>", l) < psz
+#<PROMISE>
+#<FOREIGN PROCEDURE %p>
+snprintf(p, psz, "#<FOREIGN PROCEDURE %p>", (void *)(uintptr_t)procnum(l)) < psz
+#<FOREIGN OBJECT %p>
+snprintf(p, psz, "#<FOREIGN OBJECT %p>", objvalue(l)) < psz
+#<CONTINUATION>
+#<ERROR>
+ILLEGAL!
+--
+ 
+new-segment: argument must be a number
+<string port>
+unmatched parentheses:
+read: not an input port:
+syntax error: expecting ']'
+syntax error: expecting ')'
+syntax error: mismatched parentheses and brackets
+syntax error: illegal dot expression
+()[];\t\n 
+Error reading atom
+Error reading string
+undefined sharp expression
+Error reading sharp expression
+syntax error: illegal token
+#(
+#<ENVIRONMENT>
+'
+`
+,
+,@
+ . 
+length: not a list:
+unable to handle non pair element
+backtrace_pop
+sc->backtrace_top != NULL && sc->backtrace_top_seg != NULL
+%s: needs%s %d argument(s)
+ at least
+ at most
+%s: argument %d must be: %s
+out of memory\n
+input port
+output_port
+pair or '()
+number
+non-negative integer
+backtrace frame pointer
+<free port>
+packbuff.c
+(bytes_to_advance % BYTE_ALIGNMENT) == 0
+sb_packbuff_unpack_item
+sb_packbuff_pack_item
+extra_bytes_needed == 0
+additional_bytes != NULL
+com.apple.sandbox.bundle-integrity
+security.mac.sandbox.sandcastle.enabled
+apfs
+hfs
+_fetch_bundle_attributes
+bundle_integrity.c
+ab.path_attr.attr_length != 0
+strlen(verifier->bundle_path) == verifier->bundle_path_length
+i24@?0r*8Q16
+is_subpath
+rootpath[rootpath_length] == '\0'
+path[path_length] == '\0'
+iterate_link_sibling_paths
+path != NULL
+get_link_sibling_inode
+verifier->fs_supports_hardlink_enumeration
+get_path_for_inode
+fsgp_result > 0
+legacy_track_hardlinks_stat
+!verifier->fs_supports_directory_hardlinks
+path is empty
+%s: %s
+%s: profile not found
+%s/%s.sb
+Sandbox
+sandbox_prepare_user_home_mount
+i12@?0I8
+sandbox_exempt_from_network_approval_policy
+sandbox_register_network_approval_policy_exemption_for_share
+enable
+disable
+com.apple.sandboxd
+bootstrap_look_up
+sandbox_prepare_homedir_mount
+5F9D37E2-63D2-4DD5-BEE6-17122CB4C6FD
+v16@?0^{_sb_error=}8
+v16@?0r*8
+NO_IMPLICIT_RULES
+ENABLE_PATTERN_VARIABLES
+ENABLE_ROOT_TRANSLATION
+com.apple.sandbox
+security.mac.sandbox.root_translation_enabled
+compile
+compile.c
+error == NULL
+_sb_realloc_vector_typed
+alloc.c
+new_size > alloc_size
+sb_fsa_retain
+automata.c
+node->refcnt > 0
+sb_fsa_release
+empty byteset
+sb_fsa_recognizer_byteset_block_invoke
+first == last
+sb_fsa_disjunction
+sb_fsa_get_context(node1) == sb_fsa_get_context(node2)
+node1->refcnt >= 2
+v24@?0r^{_sb_fsa_node=Ib24b1b1iII^{_sb_context}(?={_sb_fsa_recognizer=^{_sb_fsa_node}(?=^{_sb_pattern_var}{_sb_sequence=Q[0C]}^{_sb_byteset}C)}{_sb_fsa_disjunction=I[0^{_sb_fsa_node}]})}8^B16
+tree == NULL || tree->refcnt == 1
+sb_fsa_get_recognizer_child
+sb_fsa_set_recognizer_child
+sb_fsa_copy
+newnode == NULL || newnode->refcnt == 1
+sb_fsa_iterate_children
+child_count > 0
+sb_fsa_iterate_children_reverse
+sb_fsa_destroy
+node->indegree == 0
+v16@?0Q8
+_sb_fsa_recognizer_terminal
+child->type == NODE_TYPE_ACCEPTOR
+!child->subtree_has_variables
+!child->subtree_may_backtrack
+sb_fsa_retain_indegree
+node->indegree > 0
+graft_candidate_into_tree
+tree->refcnt == 1
+graftpoint.tree_position.offset == 0
+branch_position.offset == 0
+sb_fsa_is_recognizer(parent)
+branch->refcnt == 1
+sb_fsa_release_indegree
+_sb_fsa_disjunction
+i24@?0r^v8r^v16
+child->context == context
+_calculate_graft_position
+sb_fsa_get_context(tp->node) == sb_fsa_get_context(cp->node)
+tp->offset == 0
+cp->offset == 0
+!sb_fsa_is_disjunction(cp->node)
+common_sequence_length
+position1->offset <= node1->recognizer.sequence.length
+position2->offset <= node2->recognizer.sequence.length
+is_position_at_end_of_sequence
+node->type == NODE_TYPE_RECOGNIZER_SEQUENCE
+move_to_next_node
+sb_fsa_is_recognizer(position->node)
+sb_fsa_may_backtrack
+node->subtree_may_backtrack
+_sb_fsa_iterate_disjuncts
+parent == NULL || parent->type != NODE_TYPE_DISJUNCTION
+parent == NULL || parent->type != NODE_TYPE_ACCEPTOR
+parent != NULL || node == root
+parent == NULL || parent->recognizer.child == node
+sb_bitmask_retain
+bitmask.c
+bitmask->refcnt > 0
+sb_bitmask_release
+sb_bitmask_create_with_bitstring
+bitmask->alloc_bytes >= bitstr_size(bit_count)
+sb_bitmask_create_with_intersection
+bitmask1->context == bitmask2->context
+sb_bitmask_update_with_union
+bitmask->context == source->context
+sb_bitmask_update_with_intersection
+cannot modify a bitmask with multiple references
+cannot modify a bitmask after its hash has been obtained
+sb_buffer_retain
+buffer.c
+buffer->refcnt > 0
+sb_buffer_release
+sb_buffer_is_equivalent
+buffer1->context == buffer2->context
+sb_buffer_with_contents_of_file
+contents_alloc >= (size_t)sizehint
+file size exceeds maximum of %zu
+bytes_remaining != 0
+bytes_read <= bytes_remaining
+pos <= contents_alloc
+read failed: (#%d) %s
+r
+failed to open "%s" for reading: (#%d) %s
+sb_buffer_convert_iovec
+sb_buffer_get_byte_count
+buffer->byte_count == 0 || buffer->data != NULL
+sb_buffer_destroy
+buffer->data != NULL
+requested buffer size %zu exceeds maximum (%zu)
+_buffer_read
+B16@?0^{codegen=^{_sb_context}^{_sb_mutable_buffer}^{emitted_condition}Q[256^{emitted_condition}]^{emitted_data}I[256I]^{_sb_condition_list}^{_sb_stringtable}^{_sb_stringtable}^{_sb_stringtable}IIIQQQQQQQQIIIIIBBB^{_sb_error}}8
+bytecode-output:has-autobox-actions
+bytecode-output:has-message-filters
+bytecode-output:has-mach-message-filters
+bytecode-output:order
+_prepare_instructions_block_invoke
+bytecode_output.c
+c->instruction_count < sb_context_get_instruction_count(c->context)
+bytecode-output:regex
+existing entry in regex table lacking annotation
+allocate_regex_table_entry
+regexnum == c->regex_count
+unsupported table #%u
+sb_stringtable_enter
+new_count > table->entry_count
+bytecode-output:policy-index
+too many instructions (%u)
+too many regular expressions (%u)
+too many pattern variables (%u)
+too many state flags (%u)
+too many enabled profile flags (%u)
+too many tested profile flags (%u)
+too many indexed policies (%u)
+v24@?0^{_sb_pattern_var=}8^B16
+profile flag "%s" enabled by %s but never referenced; omitting
+data object length %zu exceeds maximum (%u)
+previously_emitted_data
+idx < c->ed_used_count
+get_current_data_address
+offset >= c->data_base
+profile too large
+address not properly aligned
+emit
+!value
+record_data_address
+new_count > c->ed_used_count
+idx != ED_HASH_BUCKET_EOL
+bytecode-output:address
+emit_instruction
+x <= SBC_ADDR_MAX
+unexpected instruction type
+get_instruction_address
+order < c->instruction_count
+offset < c->data_base - c->instructions_base
+emit_filter_instruction
+filter expected
+unexpected condition
+addr < sbc_instr.true_branch_addr
+addr < sbc_instr.false_branch_addr
+offset < c->data_base
+too many strings in %s table
+state flags
+tested profile flags
+record_condition_data
+c->ec_free_count > 0
+emit_bitmask
+num_bytes < UINT16_MAX / NBBY
+emit_return_instruction
+count <= UINT8_MAX
+cannot serialize errno #%d
+populate_modifier_descriptor
+!sb_modifier_requires_argument(modifier)
+no policy index associated with message filter entry point %u
+populate_modifier_msgfilter_descriptor
+mfop <= UINT8_MAX
+policy_index <= UINT16_MAX
+populate_indexed_policy_entry_point
+policy_index < c->indexed_policy_count
+emit_modifier_list
+c->emitted_modifier_descriptor_count % descriptors_per_word == 0
+padded_count <= c->modifier_descriptor_count
+emit_modifier_descriptor
+c->emitted_modifier_descriptor_count < c->modifier_descriptor_count
+emit_variable_names_block_invoke
+ordinal < allocated_count
+v28@?0^{_sb_textbuf=}8I16^B20
+sb_stringtable_iterate
+table->entries[idx] != NULL
+sb_byteset_retain
+byteset.c
+byteset->refcnt > 0
+sb_byteset_release
+sb_byteset_negate
+new_byteset == NULL || new_byteset->refcnt == 1
+sb_byteset_add_byte
+sb_byteset_get_population
+byteset->population <= 256
+sb_byteset_is_equivalent
+byteset1->context == byteset2->context
+_sb_byteset_combine
+cse_inferior_list
+cse.c
+sb_condition_is_disjunction(condition, NULL)
+sb_condition_is_conjunction(condition, NULL)
+candidate_list_add
+sb_condition_get_context(reference) == context
+new_list_count > candidates->list_count
+sb_condition_is_conjunction(reference, NULL)
+sb_condition_is_disjunction(reference, NULL)
+candidate_list_remove
+candidate >= candidates->list && candidate < &candidates->list[candidates->list_count]
+idx >= 0 && (uint)idx < candidates->list_count
+candidate_factor
+sb_condition_list_count(other_terms) > 0
+remove_reference_to_condition
+sb_condition_get_context(condition) == context
+sb_condition_is_conjunction(reference, NULL) || sb_condition_is_disjunction(reference, NULL)
+condition not referenced but expected to be
+sb_condition_retain
+condition.c
+condition->refcnt > 0
+sb_condition_release
+condition list is empty
+B16@?0r^{_sb_condition=IIIIBB(?={_sb_value=i(?=BS^{_sb_textbuf}^{_sb_pattern}^{_sb_regex}{sb_network_params=BCS}^{_sb_bitmask})}^{_sb_condition_list}^{_sb_condition})^{_sb_context}{?=^{_sb_condition}^^{_sb_condition}}{sb_source_info=*II}{_sb_annotation_list={?=^{_sb_annotation}}}}8
+v24@?0^{_sb_condition=IIIIBB(?={_sb_value=i(?=BS^{_sb_textbuf}^{_sb_pattern}^{_sb_regex}{sb_network_params=BCS}^{_sb_bitmask})}^{_sb_condition_list}^{_sb_condition})^{_sb_context}{?=^{_sb_condition}^^{_sb_condition}}{sb_source_info=*II}{_sb_annotation_list={?=^{_sb_annotation}}}}8^B16
+B16@?0^{_sb_condition=IIIIBB(?={_sb_value=i(?=BS^{_sb_textbuf}^{_sb_pattern}^{_sb_regex}{sb_network_params=BCS}^{_sb_bitmask})}^{_sb_condition_list}^{_sb_condition})^{_sb_context}{?=^{_sb_condition}^^{_sb_condition}}{sb_source_info=*II}{_sb_annotation_list={?=^{_sb_annotation}}}}8
+sb_condition_matches_subset
+sb_condition_is_filter(condition1, NULL)
+sb_condition_is_simple
+sb_filter_accepts_type(condition->filter, condition->value.type)
+sb_condition_is_boolean
+sb_condition_is_bitfield
+sb_condition_is_integer
+sb_condition_is_string_textbuf
+sb_condition_is_pattern
+sb_condition_is_regex
+sb_condition_is_network
+sb_condition_is_bitmask
+sb_condition_is_transposable
+condition1->context == condition2->context
+sb_condition_destroy
+condition->context->filter_count != 0
+invalid data type of %s filter; expected %s, got %s
+none
+boolean
+bit pattern
+integer
+pattern
+regex
+compute_hash
+condition->filter < sb_filter_count()
+_sb_condition_pattern_of_type
+sb_filter_accepts_type(filter, value_type)
+unknown condition type
+sb_condition_list_retain
+condition_list.c
+conditions->refcnt > 0
+sb_condition_list_release
+sb_condition_list_append
+new_used_count > conditions->list_used
+conditions->constant_true_count == 0
+conditions->constant_false_count == 0
+sb_condition_list_get_condition
+idx < conditions->list_used
+sb_condition_list_contains_constant_true
+conditions->constant_true_count <= 1
+sb_condition_list_contains_constant_false
+conditions->constant_false_count <= 1
+sb_condition_list_contains_contrary_conditions
+conditions->contrary_scan_limit <= conditions->list_used
+cannot modify a condition list with multiple references
+cannot modify a condition list after its hash has been obtained
+condition_list_contains_equivalent_condition
+_sb_condition_list_remove_index
+conditions->disjunction_count > 0
+conditions->conjunction_count > 0
+conditions->constant_true_count == 1
+conditions->constant_false_count == 1
+%s action requires %s extend another profile
+profile
+%s: message filters not supported on %s action
+sb_context_new
+context.c
+context->refcnt == INTERNAL_REFERENCE_COUNT + 1
+sb_context_retain
+context->refcnt > 0
+sb_context_release
+sb_context_retain_modification
+counterp == NULL || ((void *)counterp >= (void *)context && (void *)counterp < (void *)(context + 1))
+sb_context_release_modification
+*counterp > 0
+sb_context_destroy
+context->collection_count == 0
+context->profile_count == 0
+context->msgfilter_count == 0
+context->instruction_count == 0
+context->condition_count == 0
+LIST_EMPTY(&context->collection_list)
+LIST_EMPTY(&context->profile_list)
+LIST_EMPTY(&context->msgfilter_list)
+LIST_EMPTY(&context->instruction_list)
+LIST_EMPTY(&context->condition_list)
+context->intern_pool == NULL
+B32@?0r^{_sb_condition=}8^B16^B24
+v24@?0r*8^B16
+%s filter not preceded by requisite %s filter
+v36@?0I8^{_sb_condition=}12^{_sb_condition=}20^B28
+sb_error_new
+error.c
+pool->next_idx < ERROR_POOL_SIZE
+description != NULL
+_free_error_pool
+error->description != NULL
+_sb_instr_error_with_formatv
+condition == NULL || sb_condition_get_context(condition) == context
+factor_conditional_instr
+factor.c
+_condition_list_intersection
+context == sb_condition_list_get_context(conditions2)
+B16@?0r^{_sb_condition=}8
+PRIV_ADJTIME
+PRIV_PROC_UUID_POLICY
+PRIV_GLOBAL_PROC_INFO
+PRIV_SYSTEM_OVERRIDE
+PRIV_HW_DEBUG_DATA
+PRIV_SELECTIVE_FORCED_IDLE
+PRIV_PROC_TRACE_INSPECT
+PRIV_DARKBOOT
+PRIV_WORK_INTERVAL
+PRIV_SMB_TIMEMACHINE_CONTROL
+PRIV_AUDIO_LATENCY
+PRIV_KTRACE_BACKGROUND
+PRIV_SETPRIORITY_DARWIN_ROLE
+PRIV_PACKAGE_EXTENSIONS
+PRIV_TRIM_ACTIVE_FILE
+PRIV_PROC_CPUMON_OVERRIDE
+PRIV_ENDPOINTSECURITY_CLIENT
+PRIV_AUDIT_SESSION_PORT
+PRIV_VM_PRESSURE
+PRIV_VM_JETSAM
+PRIV_VM_FOOTPRINT_LIMIT
+PRIV_NET_PRIVILEGED_TRAFFIC_CLASS
+PRIV_NET_PRIVILEGED_SOCKET_DELEGATE
+PRIV_NET_INTERFACE_CONTROL
+PRIV_NET_PRIVILEGED_NETWORK_STATISTICS
+PRIV_NET_PRIVILEGED_NECP_POLICIES
+PRIV_NET_RESTRICTED_AWDL
+PRIV_NET_PRIVILEGED_NECP_MATCH
+PRIV_NET_QOSMARKING_POLICY_OVERRIDE
+PRIV_NET_RESTRICTED_INTCOPROC
+PRIV_NET_RESTRICTED_MULTIPATH_EXTENDED
+PRIV_NET_RESTRICTED_ROUTE_NC_READ
+PRIV_NET_PRIVILEGED_CLIENT_ACCESS
+PRIV_NET_PRIVILEGED_SERVER_ACCESS
+PRIV_NET_VALIDATED_RESOLVER
+PRIV_NET_CUSTOM_PROTOCOL
+PRIV_NET_PRIVILEGED_NECP_DROP_ALL_BYPASS
+PRIV_NET_PRIVILEGED_IPSEC_WAKE_PACKET
+PRIV_NET_RESTRICTED_MANAGEMENT_DATA
+PRIV_NETINET_RESERVEDPORT
+PRIV_NETINET_TCP_KA_OFFLOAD
+PRIV_SKYWALK_REGISTER_USER_PIPE
+PRIV_SKYWALK_REGISTER_KERNEL_PIPE
+PRIV_SKYWALK_REGISTER_NET_IF
+PRIV_SKYWALK_REGISTER_FLOW_SWITCH
+PRIV_SKYWALK_LOW_LATENCY_CHANNEL
+PRIV_SKYWALK_OBSERVE_ALL
+PRIV_SKYWALK_OBSERVE_STATS
+PRIV_VFS_OPEN_BY_ID
+PRIV_VFS_MOVE_DATA_EXTENTS
+PRIV_VFS_SNAPSHOT
+PRIV_VFS_DATALESS_RESOLVER
+PRIV_VFS_SETSIZE
+SIGHUP
+SIGINT
+SIGQUIT
+SIGILL
+SIGTRAP
+SIGABRT
+SIGEMT
+SIGFPE
+SIGKILL
+SIGBUS
+SIGSEGV
+SIGSYS
+SIGPIPE
+SIGALRM
+SIGTERM
+SIGURG
+SIGSTOP
+SIGTSTP
+SIGCONT
+SIGCHLD
+SIGTTIN
+SIGTTOU
+SIGIO
+SIGXCPU
+SIGXFSZ
+SIGVTALRM
+SIGPROF
+SIGWINCH
+SIGINFO
+SIGUSR1
+SIGUSR2
+SOL_SOCKET
+IPPROTO_IP
+IPPROTO_HOPOPTS
+IPPROTO_ICMP
+IPPROTO_IGMP
+IPPROTO_GGP
+IPPROTO_IPV4
+IPPROTO_TCP
+IPPROTO_ST
+IPPROTO_EGP
+IPPROTO_PIGP
+IPPROTO_RCCMON
+IPPROTO_NVPII
+IPPROTO_PUP
+IPPROTO_ARGUS
+IPPROTO_EMCON
+IPPROTO_XNET
+IPPROTO_CHAOS
+IPPROTO_UDP
+IPPROTO_MUX
+IPPROTO_MEAS
+IPPROTO_HMP
+IPPROTO_PRM
+IPPROTO_IDP
+IPPROTO_TRUNK1
+IPPROTO_TRUNK2
+IPPROTO_LEAF1
+IPPROTO_LEAF2
+IPPROTO_RDP
+IPPROTO_IRTP
+IPPROTO_TP
+IPPROTO_BLT
+IPPROTO_NSP
+IPPROTO_INP
+IPPROTO_SEP
+IPPROTO_3PC
+IPPROTO_IDPR
+IPPROTO_XTP
+IPPROTO_DDP
+IPPROTO_CMTP
+IPPROTO_TPXX
+IPPROTO_IL
+IPPROTO_IPV6
+IPPROTO_SDRP
+IPPROTO_ROUTING
+IPPROTO_FRAGMENT
+IPPROTO_IDRP
+IPPROTO_RSVP
+IPPROTO_GRE
+IPPROTO_MHRP
+IPPROTO_BHA
+IPPROTO_ESP
+IPPROTO_AH
+IPPROTO_INLSP
+IPPROTO_SWIPE
+IPPROTO_NHRP
+IPPROTO_ICMPV6
+IPPROTO_NONE
+IPPROTO_DSTOPTS
+IPPROTO_AHIP
+IPPROTO_CFTP
+IPPROTO_HELLO
+IPPROTO_SATEXPAK
+IPPROTO_KRYPTOLAN
+IPPROTO_RVD
+IPPROTO_IPPC
+IPPROTO_ADFS
+IPPROTO_SATMON
+IPPROTO_VISA
+IPPROTO_IPCV
+IPPROTO_CPNX
+IPPROTO_CPHB
+IPPROTO_WSN
+IPPROTO_PVP
+IPPROTO_BRSATMON
+IPPROTO_ND
+IPPROTO_WBMON
+IPPROTO_WBEXPAK
+IPPROTO_EON
+IPPROTO_VMTP
+IPPROTO_SVMTP
+IPPROTO_VINES
+IPPROTO_TTP
+IPPROTO_IGP
+IPPROTO_DGP
+IPPROTO_TCF
+IPPROTO_IGRP
+IPPROTO_OSPFIGP
+IPPROTO_SRPC
+IPPROTO_LARP
+IPPROTO_MTP
+IPPROTO_AX25
+IPPROTO_IPEIP
+IPPROTO_MICP
+IPPROTO_SCCSP
+IPPROTO_ETHERIP
+IPPROTO_ENCAP
+IPPROTO_APES
+IPPROTO_GMTP
+IPPROTO_PIM
+IPPROTO_IPCOMP
+IPPROTO_PGM
+IPPROTO_SCTP
+IPPROTO_DIVERT
+IPPROTO_RAW
+SO_DEBUG
+SO_ACCEPTCONN
+SO_REUSEADDR
+SO_KEEPALIVE
+SO_DONTROUTE
+SO_BROADCAST
+SO_USELOOPBACK
+SO_LINGER
+SO_LINGER_SEC
+SO_OOBINLINE
+SO_REUSEPORT
+SO_TIMESTAMP
+SO_TIMESTAMP_MONOTONIC
+SO_ACCEPTFILTER
+SO_DONTTRUNC
+SO_WANTMORE
+SO_WANTOOBFLAG
+SO_SNDBUF
+SO_RCVBUF
+SO_SNDLOWAT
+SO_RCVLOWAT
+SO_SNDTIMEO
+SO_RCVTIMEO
+SO_ERROR
+SO_TYPE
+SO_LABEL
+SO_PEERLABEL
+SO_NREAD
+SO_NKE
+SO_NOSIGPIPE
+SO_NOADDRERR
+SO_NWRITE
+SO_REUSESHAREUID
+SO_NOTIFYCONFLICT
+SO_UPCALLCLOSEWAIT
+SO_RANDOMPORT
+SO_NP_EXTENSIONS
+SO_NUMRCVPKT
+SO_NET_SERVICE_TYPE
+SO_NETSVC_MARKING_LEVEL
+SO_RESOLVER_SIGNATURE
+SO_BINDTODEVICE
+SO_NOWAKEFROMSLEEP
+SO_NOAPNFALLBK
+SO_TIMESTAMP_CONTINUOUS
+SO_RESTRICTIONS
+SO_EXECPATH
+SO_TRAFFIC_CLASS
+SO_RECV_TRAFFIC_CLASS
+SO_TRAFFIC_CLASS_DBG
+SO_OPTION_UNUSED_0
+SO_PRIVILEGED_TRAFFIC_CLASS
+SO_DEFUNCTIT
+SO_DEFUNCTOK
+SO_ISDEFUNCT
+SO_OPPORTUNISTIC
+SO_FLUSH
+SO_RECV_ANYIF
+SO_TRAFFIC_MGT_BACKGROUND
+SO_FLOW_DIVERT_TOKEN
+SO_DELEGATED
+SO_DELEGATED_UUID
+SO_NECP_ATTRIBUTES
+SO_CFIL_SOCK_ID
+SO_NECP_CLIENTUUID
+SO_AWDL_UNRESTRICTED
+SO_EXTENDED_BK_IDLE
+SO_MARK_CELLFALLBACK
+SO_QOSMARKING_POLICY_OVERRIDE
+SO_INTCOPROC_ALLOW
+SO_NECP_LISTENUUID
+SO_MPKL_SEND_INFO
+SO_STATISTICS_EVENT
+SO_WANT_KEV_SOCKET_CLOSED
+SO_MARK_KNOWN_TRACKER
+SO_MARK_KNOWN_TRACKER_NON_APP_INITIATED
+SO_MARK_WAKE_PKT
+SO_RECV_WAKE_PKT
+SO_MARK_APPROVED_APP_DOMAIN
+SO_FALLBACK_MODE
+SO_MARK_CELLFALLBACK_UUID
+SO_APPLICATION_ID
+SO_MARK_DOMAIN_INFO_SILENT
+SO_MAX_PACING_RATE
+SO_CONNECTION_IDLE
+SOCK_STREAM
+SOCK_DGRAM
+SOCK_RAW
+SOCK_RDM
+SOCK_SEQPACKET
+AF_UNSPEC
+AF_UNIX
+AF_LOCAL
+AF_INET
+AF_IMPLINK
+AF_PUP
+AF_CHAOS
+AF_NS
+AF_ISO
+AF_OSI
+AF_ECMA
+AF_DATAKIT
+AF_CCITT
+AF_SNA
+AF_DECnet
+AF_DLI
+AF_LAT
+AF_HYLINK
+AF_APPLETALK
+AF_ROUTE
+AF_LINK
+pseudo_AF_XTP
+AF_COIP
+AF_CNT
+pseudo_AF_RTIP
+AF_IPX
+AF_SIP
+pseudo_AF_PIP
+AF_NDRV
+AF_ISDN
+AF_E164
+pseudo_AF_KEY
+AF_INET6
+AF_NATM
+AF_SYSTEM
+AF_NETBIOS
+AF_PPP
+pseudo_AF_HDRCMPLT
+AF_RESERVED_36
+AF_IEEE80211
+AF_UTUN
+AF_VSOCK
+AF_MAX
+kUSBAudioInterfaceClass
+kUSBCommunicationControlInterfaceClass
+kUSBCommunicationDataInterfaceClass
+kUSBHIDInterfaceClass
+kUSBPhysicalInterfaceClass
+kUSBImageInterfaceClass
+kUSBPrintingInterfaceClass
+kUSBMassStorageInterfaceClass
+kUSBChipSmartCardInterfaceClass
+kUSBContentSecurityInterfaceClass
+kUSBVideoInterfaceClass
+kUSBPersonalHealthcareInterfaceClass
+kUSBDiagnosticDeviceInterfaceClass
+kUSBWirelessControllerInterfaceClass
+kUSBApplicationSpecificInterfaceClass
+kUSBVendorSpecificInterfaceClass
+kUSBCompositeSubClass
+kUSBHubSubClass
+kUSBAudioControlSubClass
+kUSBAudioStreamingSubClass
+kUSBMIDIStreamingSubClass
+kUSBDFUSubClass
+kUSBIrDABridgeSubClass
+kUSBTestMeasurementSubClass
+kUSBMassStorageRBCSubClass
+kUSBMassStorageATAPISubClass
+kUSBMassStorageQIC157SubClass
+kUSBMassStorageUFISubClass
+kUSBMassStorageSFF8070iSubClass
+kUSBMassStorageSCSISubClass
+kUSBHIDBootInterfaceSubClass
+kUSBCommDirectLineSubClass
+kUSBCommAbstractSubClass
+kUSBCommTelephoneSubClass
+kUSBCommMultiChannelSubClass
+kUSBCommCAPISubClass
+kUSBCommEthernetNetworkingSubClass
+kUSBATMNetworkingSubClass
+kUSBReprogrammableDiagnosticSubClass
+kUSBRFControllerSubClass
+kUSBCommonClassSubClass
+kUSBVideoControlSubClass
+kUSBVideoStreamingSubClass
+kUSBVideoInterfaceCollectionSubClass
+CS_OPS_STATUS
+CS_OPS_MARKINVALID
+CS_OPS_MARKHARD
+CS_OPS_MARKKILL
+CS_OPS_CDHASH
+CS_OPS_PIDOFFSET
+CS_OPS_ENTITLEMENTS_BLOB
+CS_OPS_MARKRESTRICT
+CS_OPS_SET_STATUS
+CS_OPS_BLOB
+CS_OPS_IDENTITY
+CS_OPS_CLEARINSTALLER
+CS_OPS_CLEARPLATFORM
+CS_OPS_TEAMID
+CS_OPS_CLEAR_LV
+CS_OPS_DER_ENTITLEMENTS_BLOB
+CS_OPS_VALIDATION_CATEGORY
+CS_OPS_CDHASH_WITH_INFO
+CSR_ALLOW_UNTRUSTED_KEXTS
+CSR_ALLOW_UNRESTRICTED_FS
+CSR_ALLOW_TASK_FOR_PID
+CSR_ALLOW_KERNEL_DEBUGGER
+CSR_ALLOW_APPLE_INTERNAL
+CSR_ALLOW_UNRESTRICTED_DTRACE
+CSR_ALLOW_UNRESTRICTED_NVRAM
+CSR_ALLOW_DEVICE_CONFIGURATION
+CSR_ALLOW_ANY_RECOVERY_OS
+CSR_ALLOW_UNAPPROVED_KEXTS
+CSR_ALLOW_EXECUTABLE_POLICY_OVERRIDE
+CSR_ALLOW_UNAUTHENTICATED_ROOT
+CSR_ALLOW_RESEARCH_GUESTS
+HOST_DYNAMIC_PAGER_PORT
+HOST_AUDIT_CONTROL_PORT
+HOST_USER_NOTIFICATION_PORT
+HOST_AUTOMOUNTD_PORT
+HOST_LOCKD_PORT
+HOST_KTRACE_BACKGROUND_PORT
+HOST_SEATBELT_PORT
+HOST_KEXTD_PORT
+HOST_LAUNCHCTL_PORT
+HOST_UNFREED_PORT
+HOST_AMFID_PORT
+HOST_GSSD_PORT
+HOST_TELEMETRY_PORT
+HOST_ATM_NOTIFICATION_PORT
+HOST_COALITION_PORT
+HOST_SYSDIAGNOSE_PORT
+HOST_XPC_EXCEPTION_PORT
+HOST_CONTAINERD_PORT
+HOST_NODE_PORT
+HOST_RESOURCE_NOTIFY_PORT
+HOST_CLOSURED_PORT
+HOST_SYSPOLICYD_PORT
+HOST_FILECOORDINATIOND_PORT
+HOST_FAIRPLAYD_PORT
+HOST_IOCOMPRESSIONSTATS_PORT
+HOST_MEMORY_ERROR_PORT
+HOST_MANAGEDAPPDISTD_PORT
+HOST_DOUBLEAGENTD_PORT
+TASK_KERNEL_PORT
+TASK_HOST_PORT
+TASK_NAME_PORT
+TASK_BOOTSTRAP_PORT
+TASK_INSPECT_PORT
+TASK_READ_PORT
+TASK_ACCESS_PORT
+TASK_DEBUG_CONTROL_PORT
+TASK_RESOURCE_NOTIFY_PORT
+PERSONA_INVALID
+PERSONA_GUEST
+PERSONA_MANAGED
+PERSONA_PRIV
+PERSONA_SYSTEM
+PERSONA_DEFAULT
+PERSONA_ENTERPRISE
+EXCEPTION_DEFAULT
+EXCEPTION_STATE
+EXCEPTION_STATE_IDENTITY
+EXCEPTION_IDENTITY_PROTECTED
+EXCEPTION_STATE_IDENTITY_PROTECTED
+EXC_BAD_ACCESS
+EXC_BAD_INSTRUCTION
+EXC_ARITHMETIC
+EXC_EMULATION
+EXC_SOFTWARE
+EXC_BREAKPOINT
+EXC_SYSCALL
+EXC_MACH_SYSCALL
+EXC_RPC_ALERT
+EXC_CRASH
+EXC_RESOURCE
+EXC_GUARD
+EXC_CORPSE_NOTIFY
+MEMORYSTATUS_CMD_GET_PRIORITY_LIST
+MEMORYSTATUS_CMD_SET_PRIORITY_PROPERTIES
+MEMORYSTATUS_CMD_GET_JETSAM_SNAPSHOT
+MEMORYSTATUS_CMD_GET_PRESSURE_STATUS
+MEMORYSTATUS_CMD_SET_JETSAM_HIGH_WATER_MARK
+MEMORYSTATUS_CMD_SET_JETSAM_TASK_LIMIT
+MEMORYSTATUS_CMD_SET_MEMLIMIT_PROPERTIES
+MEMORYSTATUS_CMD_GET_MEMLIMIT_PROPERTIES
+MEMORYSTATUS_CMD_PRIVILEGED_LISTENER_ENABLE
+MEMORYSTATUS_CMD_PRIVILEGED_LISTENER_DISABLE
+MEMORYSTATUS_CMD_AGGRESSIVE_JETSAM_LENIENT_MODE_ENABLE
+MEMORYSTATUS_CMD_AGGRESSIVE_JETSAM_LENIENT_MODE_DISABLE
+MEMORYSTATUS_CMD_GET_MEMLIMIT_EXCESS
+MEMORYSTATUS_CMD_ELEVATED_INACTIVEJETSAMPRIORITY_ENABLE
+MEMORYSTATUS_CMD_ELEVATED_INACTIVEJETSAMPRIORITY_DISABLE
+MEMORYSTATUS_CMD_SET_PROCESS_IS_MANAGED
+MEMORYSTATUS_CMD_GET_PROCESS_IS_MANAGED
+MEMORYSTATUS_CMD_SET_PROCESS_IS_FREEZABLE
+MEMORYSTATUS_CMD_GET_PROCESS_IS_FREEZABLE
+MEMORYSTATUS_CMD_FREEZER_CONTROL
+MEMORYSTATUS_CMD_GET_AGGRESSIVE_JETSAM_LENIENT_MODE
+MEMORYSTATUS_CMD_INCREASE_JETSAM_TASK_LIMIT
+MEMORYSTATUS_CMD_SET_TESTING_PID
+MEMORYSTATUS_CMD_GET_PROCESS_IS_FROZEN
+MEMORYSTATUS_CMD_MARK_PROCESS_COALITION_SWAPPABLE
+MEMORYSTATUS_CMD_GET_PROCESS_COALITION_IS_SWAPPABLE
+MEMORYSTATUS_CMD_CONVERT_MEMLIMIT_MB
+MEMORYSTATUS_CMD_SET_DIAG_LIMIT
+MEMORYSTATUS_CMD_GET_DIAG_LIMIT
+MEMORYSTATUS_CMD_GET_JETSAM_ZPRINT_NAMES
+MEMORYSTATUS_CMD_GET_JETSAM_ZPRINT_INFO
+MEMORYSTATUS_CMD_GET_JETSAM_ZPRINT_MEMINFO
+MEMORYSTATUS_CMD_REARM_MEMLIMIT
+MEMORYSTATUS_CMD_GET_PRIORITY_LIST_V2
+MEMORYSTATUS_CMD_GET_KILL_COUNTS
+MEMORYSTATUS_CMD_GET_CONCLAVE_LIMIT
+MEMORYSTATUS_CMD_GRP_SET_PROPERTIES
+MEMORYSTATUS_CMD_TEST_JETSAM
+MEMORYSTATUS_CMD_TEST_JETSAM_SORT
+NECP_CLIENT_ACTION_ADD
+NECP_CLIENT_ACTION_REMOVE
+NECP_CLIENT_ACTION_COPY_PARAMETERS
+NECP_CLIENT_ACTION_COPY_RESULT
+NECP_CLIENT_ACTION_COPY_LIST
+NECP_CLIENT_ACTION_REQUEST_NEXUS_INSTANCE
+NECP_CLIENT_ACTION_AGENT
+NECP_CLIENT_ACTION_COPY_AGENT
+NECP_CLIENT_ACTION_COPY_INTERFACE
+NECP_CLIENT_ACTION_SET_STATISTICS
+NECP_CLIENT_ACTION_COPY_ROUTE_STATISTICS
+NECP_CLIENT_ACTION_AGENT_USE
+NECP_CLIENT_ACTION_MAP_SYSCTLS
+NECP_CLIENT_ACTION_UPDATE_CACHE
+NECP_CLIENT_ACTION_COPY_CLIENT_UPDATE
+NECP_CLIENT_ACTION_COPY_UPDATED_RESULT
+NECP_CLIENT_ACTION_ADD_FLOW
+NECP_CLIENT_ACTION_REMOVE_FLOW
+NECP_CLIENT_ACTION_CLAIM
+NECP_CLIENT_ACTION_SIGN
+NECP_CLIENT_ACTION_GET_INTERFACE_ADDRESS
+NECP_CLIENT_ACTION_ACQUIRE_AGENT_TOKEN
+NECP_CLIENT_ACTION_VALIDATE
+NECP_CLIENT_ACTION_GET_SIGNED_CLIENT_ID
+NECP_CLIENT_ACTION_SET_SIGNED_CLIENT_ID
+NECP_CLIENT_ACTION_COPY_UPDATED_RESULT_FINAL
+NECP_CLIENT_ACTION_GET_FLOW_STATISTICS
+NECP_CLIENT_ACTION_SIGN_MAX_STRING_LENGTH
+NECP_CLIENT_ACTION_SIGN_TAG_LENGTH
+NECP_CLIENT_ACTION_SIGN_DEFAULT_DATA_LENGTH
+NECP_CLIENT_ACTION_SIGN_MAX_TOTAL_LENGTH
+F_DUPFD
+F_GETFD
+F_SETFD
+F_GETFL
+F_SETFL
+F_GETOWN
+F_SETOWN
+F_GETLK
+F_SETLK
+F_SETLKW
+F_SETLKWTIMEOUT
+F_FLUSH_DATA
+F_CHKCLEAN
+F_PREALLOCATE
+F_SETSIZE
+F_RDADVISE
+F_RDAHEAD
+F_NOCACHE
+F_LOG2PHYS
+F_GETPATH
+F_FULLFSYNC
+F_PATHPKG_CHECK
+F_FREEZE_FS
+F_THAW_FS
+F_GLOBAL_NOCACHE
+F_ADDSIGS
+F_ADDFILESIGS
+F_NODIRECT
+F_GETPROTECTIONCLASS
+F_SETPROTECTIONCLASS
+F_LOG2PHYS_EXT
+F_GETLKPID
+F_SETBACKINGSTORE
+F_GETPATH_MTMINFO
+F_GETCODEDIR
+F_SETNOSIGPIPE
+F_GETNOSIGPIPE
+F_TRANSCODEKEY
+F_SINGLE_WRITER
+F_GETPROTECTIONLEVEL
+F_FINDSIGS
+F_ADDFILESIGS_FOR_DYLD_SIM
+F_BARRIERFSYNC
+F_OFD_SETLK
+F_OFD_SETLKW
+F_OFD_GETLK
+F_OFD_SETLKWTIMEOUT
+F_ADDFILESIGS_RETURN
+F_CHECK_LV
+F_PUNCHHOLE
+F_TRIM_ACTIVE_FILE
+F_SPECULATIVE_READ
+F_GETPATH_NOFIRMLINK
+F_ADDFILESIGS_INFO
+F_ADDFILESUPPL
+F_GETSIGSINFO
+F_SETLEASE
+F_GETLEASE
+F_TRANSFEREXTENTS
+F_ATTRIBUTION_TAG
+F_NOCACHE_EXT
+F_ADDSIGS_MAIN_BINARY
+F_DIRLSEEK
+F_DUPFD_CLOEXEC
+F_OPENFROM
+F_UNLINKFROM
+F_CHECK_OPENEVT
+F_MARKDEPENDENCY
+F_SETSTATICCONTENT
+F_MOVEDATAEXTENTS
+F_GETDEFAULTPROTLEVEL
+F_MAKECOMPRESSED
+F_SET_GREEDY_MODE
+F_SETIOTYPE
+F_RECYCLE
+F_OFD_GETLKPID
+F_SETCONFINED
+F_GETCONFINED
+F_ASSERT_BG_ACCESS
+F_RELEASE_BG_ACCESS
+F_IOTYPE_ISOCHRONOUS
+FSIOC_SYNC_VOLUME
+FSIOC_SET_PACKAGE_EXTS
+FSIOC_UNSUPPORTED
+FSIOC_SET_FSTYPENAME_OVERRIDE
+FSIOC_ROUTEFS_SETROUTEID
+FSIOC_FIOSEEKHOLE
+FSIOC_FIOSEEKDATA
+FSIOC_CAS_BSDFLAGS
+FSIOC_FD_ONLY_OPEN_ONCE
+FSIOC_GRAFT_FS
+FSIOC_UNGRAFT_FS
+FSIOC_AUTH_FS
+FSIOC_EXCLAVE_FS_REGISTER
+FSIOC_EXCLAVE_FS_UNREGISTER
+FSIOC_EXCLAVE_FS_GET_BASE_DIRS
+FSIOC_GET_GRAFT_INFO
+FSIOC_DIRLSEEK
+FSIOC_FREEZE_EXTENTS
+FSIOC_THAW_EXTENTS
+FSIOC_EVAL_ROOTAUTH
+FSIOC_KERNEL_ROOTAUTH
+FSIOC_TEST_FSE_ACCESS_GRANTED
+APFSIOC_REVERT_TO_SNAPSHOT
+APFSIOC_MAINTAIN_DIR_STATS
+APFSIOC_GET_DIR_STATS
+APFSIOC_SET_AUTO_MOUNT_UUID
+APFSIOC_GET_AUTO_MOUNT_UUID
+APFSIOC_SET_CONV_CTX
+APFSIOC_GET_CRYPTO_IDS
+APFSIOC_GET_CRYPTO_KEY
+APFSIOC_IS_SPARSE
+APFSIOC_NEXT_LINK
+APFSIOC_GET_BOOTINFO
+APFSIOC_SET_BOOTINFO
+APFSIOC_GET_BULKACCESS
+APFSIOC_GET_CLONE_INFO
+APFSIOC_IS_BLOCK_SHARED
+APFSIOC_DIFF_SNAPSHOTS
+APFSIOC_SET_NEAR_LOW_DISK
+APFSIOC_GET_NEAR_LOW_DISK
+APFSIOC_SNAP_RANGE_PRIV_SIZE
+APFSIOC_SNAP_MAKE_DATALESS
+APFS_FSCTL_NX_FEATURES
+APFS_FSCTL_APFS_FEATURES
+APFS_FSCTL_SET_NX_DEFRAG
+APFS_FSCTL_SET_APFS_DEFRAG
+APFS_FSCTL_GET_DEFRAG_LIST
+APFS_FSCTL_DEBUG_CHECK_DF
+APFSIOC_PIN_DATA
+APFSIOC_DEBUG_STATS
+APFSIOC_GET_DIR_STATS_EXT
+APFS_FSCTL_UNMOUNT_CRYPTO_HINT
+APFSIOC_WAIT_FOR_SNAPSHOT_DELETION
+APFSIOC_GET_INTERNAL_FLAGS
+APFSIOC_OMAP_TRACK_ENABLE
+APFSIOC_OMAP_TRACK_REPORT
+APFSIOC_OMAP_LOOKUP
+APFSIOC_SET_CRYPTO_MNT_DATA_IV
+APFSIOC_GET_KEYLOCKER_PRANGE
+APFSIOC_GET_COW_STATS
+APFSIOC_FAST_PROMOTE_DATA
+APFSIOC_GET_FX_DEFRAG_REGIONS
+APFSIOC_CONTROL_FX_DEFRAG_THREAD
+APFSIOC_GET_FX_DEFRAG_PROGRESS
+APFSIOC_BC_OPTIMIZE_INODES
+APFSIOC_BC_GETINODENUM
+APFSIOC_SNAP_TOKEN
+APFSIOC_GET_FX_DEFRAG_STATS
+APFSIOC_OMAP_TREE_LEAF_EXTENTS
+APFSIOC_XDSTREAM_OBJ_ID
+APFSIOC_USE_XATTR_MAX_EMBEDDED_SIZE
+APFSIOC_CREATE_BYPASS_DEV
+APFSIOC_DESTROY_BYPASS_DEV
+APFSIOC_MAKE_OBJECT_DATALESS
+APFSIOC_SET_ATIME_UPDATE
+APFSIOC_GET_ATIME_UPDATE
+APFSIOC_FIRMLINK_CTL
+APFSIOC_KEY_ROLLING_OP
+APFSIOC_KEY_ROLLING_STAT
+APFSIOC_ENTITLED_RESERVE
+APFSIOC_SET_FREE_SPACE_CHANGE_THRES
+APFSIOC_GET_FREE_SPACE_CHANGE_THRES
+APFSIOC_CREATE_SYNTHETIC_FOLDER
+APFSIOC_SNAP_LOOKUP
+APFSIOC_MARK_PURGEABLE
+APFSIOC_PURGE_FILES
+APFSIOC_GET_PURGEABLE_STATS
+APFSIOC_GET_PURGEABLE_FILE_FLAGS
+APFSIOC_SYNC_ROOT_SET_FLAG
+APFSIOC_SYNC_ROOT_GET_FLAG
+APFSIOC_CLEAR_PURGEABLE
+APFSIOC_GET_PARENT_SYNC_ROOT
+APFSIOC_CREATE_SYNTHETIC_SYMLINK
+APFSIOC_SHARE_RANGE
+APFSIOC_HAS_OBJIDS_AFTER
+APFSIOC_HAS_OBJIDS_AFTER_BINCOMPAT
+APFSIOC_CREATE_HIDDEN_SYNTHETIC_SYMLINK
+APFSIOC_MARK_PURGEABLE_EXT
+APFSIOC_GET_DEV_BY_ROLE
+APFSIOC_SSV_DEBUG
+APFSIOC_IS_VOL_LOCKED
+APFSIOC_MAKE_FILE_COW_EXEMPT
+APFSIOC_DROP_EXTENTS_IN_SNAP
+APFSIOC_GET_FILE_HASH_RECORD
+APFSIOC_CHECKSEAL
+APFSIOC_VOL_BOOTABLE
+APFSIOC_EVAL_ROOTHASH
+APFSIOC_VOLUME_CLASSKB_OP
+APFSIOC_PFKU_ROLLING_OP
+APFSIOC_CHECK_MAT_OP
+APFSIOC_DOC_ID_TO_FILE_ID
+APFSIOC_REVOKE_CHILDREN
+APFSIOC_PURGE_SINGLE_FILE
+APFSIOC_GET_ABS_VOL_UUID
+APFSIOC_GET_IO_LOG
+APFSIOC_SYNC_AND_FREEZE
+APFSIOC_GRAFT_AN_FS
+APFSIOC_UNGRAFT_AN_FS
+APFSIOC_UNGRAFT_ALL
+APFSIOC_CANCEL_PURGE
+APFSIOC_GET_PREALLOCATE_MIN_SPACE
+APFSIOC_RELEASE_PREALLOCATED_SPACE
+APFSIOC_GET_DEV_INFO
+APFSIOC_GET_SYSTEM_DEV
+APFSIOC_GET_VOLUME_ROLE
+APFSIOC_PURGEABLE_GET_FILE_INFO
+APFSIOC_PURGEABLE_START_PURGE
+APFSIOC_PURGEABLE_LABEL_PURGEABLE
+APFSIOC_PURGEABLE_GET_DETAILED_STATS
+APFSIOC_DIR_STATS_OP
+APFSIOC_GET_ATTRIBUTION_INFO
+APFSIOC_GET_SYNC_ROOT
+APFSIOC_GET_CLONE_INODES
+APFSIOC_VOL_ATTRIBUTION_TAG
+APFSIOC_LIST_ATTRIBUTION_TAGS
+APFSIOC_OMM_CTL
+APFSIOC_GET_FREE_QUEUE_INFO
+APFSIOC_OBJECT_UNSET_DATALESS
+APFSIOC_GET_SPEC_TELEM
+APFSIOC_SET_SPEC_TELEM
+APFSIOC_PURGEABLE_GET_EXTENTS
+APFSIOC_PURGEABLE_GET_BULK_INFO
+APFSIOC_PURGEABLE_NOTIFICATION_THRESHOLD_OP
+APFSIOC_IS_GRAFT_SUPPORTED
+APFSIOC_GET_SHARED_EXTENTS
+APFSIOC_SPEC_TELEM_OP
+APFSIOC_GET_CRYPTO_FILE_INFO
+APFSIOC_FILE_PADDING
+APFSIOC_SET_IDLE_PURGE_NOTIFY_DISK
+APFSIOC_GET_IDLE_PURGE_NOTIFY_DISK
+APFSIOC_CLONEGROUP_ITERATE
+APFSIOC_WAIT_FOR_REAPER
+APFSIOC_ITOD_OP
+HFSIOC_RESIZE_PROGRESS
+HFSIOC_RESIZE_VOLUME
+HFSIOC_CHANGE_NEXT_ALLOCATION
+HFSIOC_GET_VOL_CREATE_TIME
+HFSIOC_SETBACKINGSTOREINFO
+HFSIOC_CLRBACKINGSTOREINFO
+HFSIOC_UNSUPPORTED
+HFSIOC_PREV_LINK
+HFSIOC_NEXT_LINK
+HFSIOC_GETPATH
+HFSIOC_SET_XATTREXTENTS_STATE
+HFSIOC_EXT_BULKACCESS
+HFSIOC_MARK_BOOT_CORRUPT
+HFSIOC_GET_JOURNAL_INFO
+HFSIOC_SET_VERY_LOW_DISK
+HFSIOC_SET_LOW_DISK
+HFSIOC_SET_DESIRED_DISK
+HFSIOC_SET_ALWAYS_ZEROFILL
+HFSIOC_VOLUME_STATUS
+HFSIOC_DISABLE_METAZONE
+HFSIOC_CHANGE_NEXTCNID
+HFSIOC_GET_VERY_LOW_DISK
+HFSIOC_GET_LOW_DISK
+HFSIOC_GET_DESIRED_DISK
+HFSIOC_TRANSFER_DOCUMENT_ID
+HFSIOC_OP_CPTRIM
+HFSIOC_OP_CPREWRAPPED
+HFSIOC_OP_CRYPTOGEN
+HFSIOC_LISTXATTRID_CP
+HFSIOC_OP_CPFORCEREWRAP
+HFSIOC_FSINFO_METADATA_BLOCKS
+HFSIOC_CS_FREESPACE_TRIM
+HFSIOC_KEY_ROLL
+HFSIOC_GET_KEY_AUTO_ROLL
+HFSIOC_SET_KEY_AUTO_ROLL
+HFSIOC_CP_LIST_IDS
+HFSIOC_GET_FSINFO
+HFSIOC_REPIN_HOTFILE_STATE
+HFSIOC_SET_HOTFILE_STATE
+HFSIOC_SET_MAX_DEFRAG_SIZE
+HFSIOC_FORCE_ENABLE_DEFRAG
+DTDBOpenFSCTL
+DTDBAddIconFSCTL
+DTDBGetIconFSCTL
+DTDBGetIconInfoFSCTL
+DTDBAddAPPLFSCTL
+DTDBGetAPPLFSCTL
+DTDBRemoveAPPLFSCTL
+DTDBSetCommentFSCTL
+DTDBGetCommentFSCTL
+DTDBRemoveCommentFSCTL
+afpfsGetParmsFSCTL
+afpfsGetMountInfoFSCTL32
+afpfsGetMountInfoFSCTL64
+afpfsGetMountInfoFSCTL
+afpfsCreateFileDescFSCTL
+afpfsMapIDNameFSCTL
+afpfsGetAccessRightsFSCTL
+afpfsSetAccessRightsFSCTL
+afpfsByteRangeLockFSCTL
+afpfsGetAttenFSCTL
+afpfsSleepWakeFSCTL
+afpfsUserCommandFSCTL32
+afpfsUserCommandFSCTL64
+afpfsUserCommandFSCTL
+afpfsTraceLogFSCTL
+afpfsGetSavedAttenFSCTL
+afpfsByteRangeLock2FSCTL
+afpfsRefeshCredentialFSCTL
+afpfsGetStats
+afpfsSpotLightRPC32
+afpfsSpotLightRPC64
+afpfsSpotLightRPC
+afpfsDebugTestFSCTL
+afpfsTimeMachineFSCTL
+afpfsSubMountFSCTL
+afpfsSrvrInfoFSCTL
+afpfsAFPRequestFSCTL
+afpfsSpotLightSideBandRPC
+smbfsByteRangeLock2FSCTL
+smbfsByteRangeLockFSCTL
+smbfsUniqueShareIDFSCTL
+smbfsGetSessionSockaddrFSCTL
+smbfsGetStatsFSCTL
+smbfsDebugTestFSCTL
+smbfsTimeMachineFSCTL
+FIOCLEX
+FIONCLEX
+FIONREAD
+FIONBIO
+FIOASYNC
+FIOSETOWN
+FIOGETOWN
+FIODTYPE
+DKIOCEJECT
+DKIOCSYNCHRONIZE
+DKIOCFORMAT
+DKIOCGETFORMATCAPACITIES
+DKIOCGETBLOCKSIZE
+DKIOCGETBLOCKCOUNT
+DKIOCGETFIRMWAREPATH
+DKIOCISFORMATTED
+DKIOCISWRITABLE
+DKIOCREQUESTIDLE
+DKIOCUNMAP
+DKIOCCORESTORAGE
+DKIOCGETLOCATION
+DKIOCGETMAXBLOCKCOUNTREAD
+DKIOCGETMAXBLOCKCOUNTWRITE
+DKIOCGETMAXBYTECOUNTREAD
+DKIOCGETMAXBYTECOUNTWRITE
+DKIOCGETMAXSEGMENTCOUNTREAD
+DKIOCGETMAXSEGMENTCOUNTWRITE
+DKIOCGETMAXSEGMENTBYTECOUNTREAD
+DKIOCGETMAXSEGMENTBYTECOUNTWRITE
+DKIOCGETMINSEGMENTALIGNMENTBYTECOUNT
+DKIOCGETMAXSEGMENTADDRESSABLEBITCOUNT
+DKIOCGETFEATURES
+DKIOCGETPHYSICALBLOCKSIZE
+DKIOCGETCOMMANDPOOLSIZE
+DKIOCGETPROVISIONSTATUS
+DKIOCGETERRORDESCRIPTION
+DKIOCSYNCHRONIZECACHE
+DKIOCSETBLOCKSIZE
+DKIOCGETBSDUNIT
+DKIOCISSOLIDSTATE
+DKIOCISVIRTUAL
+DKIOCGETBASE
+DKIOCGETTHROTTLEMASK
+DKIOCLOCKPHYSICALEXTENTS
+DKIOCGETPHYSICALEXTENT
+DKIOCUNLOCKPHYSICALEXTENTS
+DKIOCSETTIER
+DKIOCGETENCRYPTIONTYPE
+DKIOCISLOWPOWERMODE
+DKIOCGETIOMINSATURATIONBYTECOUNT
+DKIOCGETAPFSFLAVOUR
+DKIOCAPFSGETWBCRANGE
+DKIOCAPFSRELEASEWBCRANGE
+DKIOCGETMAXSWAPWRITE
+FSEVENTS_CLONE
+FSEVENTS_DEVICE_FILTER
+FSEVENTS_WANT_COMPACT_EVENTS
+FSEVENTS_WANT_EXTENDED_INFO
+FSEVENTS_GET_CURRENT_ID
+FSEVENTS_UNMOUNT_PENDING_ACK
+CTLIOCGCOUNT
+CTLIOCGINFO
+SIOCGKEVID
+SIOCSKEVFILT
+SIOCGKEVFILT
+SIOCGKEVVENDOR
+SIOCSHIWAT
+SIOCGHIWAT
+SIOCSLOWAT
+SIOCGLOWAT
+SIOCATMARK
+SIOCSPGRP
+SIOCGPGRP
+SIOCSIFADDR
+SIOCSIFDSTADDR
+SIOCSIFFLAGS
+SIOCGIFFLAGS
+SIOCSIFBRDADDR
+SIOCSIFNETMASK
+SIOCGIFMETRIC
+SIOCSIFMETRIC
+SIOCDIFADDR
+SIOCAIFADDR
+SIOCGIFADDR
+SIOCGIFDSTADDR
+SIOCGIFBRDADDR
+SIOCGIFCONF
+SIOCGIFNETMASK
+SIOCAUTOADDR
+SIOCAUTONETMASK
+SIOCARPIPLL
+SIOCADDMULTI
+SIOCDELMULTI
+SIOCGIFMTU
+SIOCSIFMTU
+SIOCGIFPHYS
+SIOCSIFPHYS
+SIOCSIFMEDIA
+SIOCGIFMEDIA
+SIOCSIFGENERIC
+SIOCGIFGENERIC
+SIOCRSLVMULTI
+SIOCSIFLLADDR
+SIOCGIFSTATUS
+SIOCSIFPHYADDR
+SIOCGIFPSRCADDR
+SIOCGIFPDSTADDR
+SIOCDIFPHYADDR
+SIOCGIFDEVMTU
+SIOCSIFALTMTU
+SIOCGIFALTMTU
+SIOCSIFBOND
+SIOCGIFBOND
+SIOCGIFXMEDIA
+SIOCSIFCAP
+SIOCGIFCAP
+SIOCSIFMANAGEMENT
+SIOCIFCREATE
+SIOCIFDESTROY
+SIOCIFCREATE2
+SIOCSDRVSPEC
+SIOCGDRVSPEC
+SIOCSIFVLAN
+SIOCGIFVLAN
+SIOCIFGCLONERS
+SIOCGIFASYNCMAP
+SIOCSIFASYNCMAP
+SIOCGIFMAC
+SIOCSIFMAC
+SIOCSIFKPI
+SIOCGIFKPI
+SIOCGIFWAKEFLAGS
+SIOCGIFFUNCTIONALTYPE
+SIOCSIF6LOWPAN
+SIOCGIF6LOWPAN
+SIOCGIFDIRECTLINK
+SIOCPROTOATTACH
+SIOCPROTODETACH
+SIOCGLINKHEURISTICS
+SIOCSATTACHPROTONULL
+SIOCGPOINTOPOINTMDNS
+SIOCSPOINTOPOINTMDNS
+SIOCGINBANDWAKEPKT
+SIOCSINBANDWAKEPKT
+SIOCGLOWPOWERWAKE
+SIOCSLOWPOWERWAKE
+SIOCGIFGETRTREFCNT
+SIOCGIFLINKQUALITYMETRIC
+SIOCSIFOPPORTUNISTIC
+SIOCGIFOPPORTUNISTIC
+SIOCSETROUTERMODE
+SIOCGIFEFLAGS
+SIOCSIFDESC
+SIOCGIFDESC
+SIOCSIFLINKPARAMS
+SIOCGIFLINKPARAMS
+SIOCGIFQUEUESTATS
+SIOCSIFTHROTTLE
+SIOCGIFTHROTTLE
+SIOCGASSOCIDS
+SIOCGCONNIDS
+SIOCGCONNINFO
+SIOCSCONNORDER
+SIOCGCONNORDER
+SIOCSIFLOG
+SIOCGIFLOG
+SIOCGIFDELEGATE
+SIOCGIFLLADDR
+SIOCGIFTYPE
+SIOCGIFEXPENSIVE
+SIOCSIFEXPENSIVE
+SIOCGIF2KCL
+SIOCSIF2KCL
+SIOCGSTARTDELAY
+SIOCAIFAGENTID
+SIOCDIFAGENTID
+SIOCGIFAGENTIDS
+SIOCGIFAGENTDATA
+SIOCSIFINTERFACESTATE
+SIOCGIFINTERFACESTATE
+SIOCSIFPROBECONNECTIVITY
+SIOCGIFPROBECONNECTIVITY
+SIOCSIFNETSIGNATURE
+SIOCGIFNETSIGNATURE
+SIOCSECNMODE
+SIOCSIFORDER
+SIOCGIFORDER
+SIOCSQOSMARKINGMODE
+SIOCSQOSMARKINGENABLED
+SIOCGQOSMARKINGMODE
+SIOCGQOSMARKINGENABLED
+SIOCSIFTIMESTAMPENABLE
+SIOCSIFTIMESTAMPDISABLE
+SIOCGIFTIMESTAMPENABLED
+SIOCSIFDISABLEOUTPUT
+SIOCSIFSUBFAMILY
+SIOCGIFAGENTLIST
+SIOCSIFLOWINTERNET
+SIOCGIFLOWINTERNET
+SIOCGIFNAT64PREFIX
+SIOCSIFNAT64PREFIX
+SIOCGIFNEXUS
+SIOCGIFPROTOLIST
+SIOCGIFTCPKAOMAX
+SIOCGIFLOWPOWER
+SIOCSIFLOWPOWER
+SIOCGIFCLAT46ADDR
+SIOCGIFMPKLOG
+SIOCSIFMPKLOG
+SIOCGIFCONSTRAINED
+SIOCSIFCONSTRAINED
+SIOCGIFXFLAGS
+SIOCGIFNOACKPRIO
+SIOCSIFNOACKPRIO
+SIOCGETROUTERMODE
+SIOCSIFNETWORKID
+SIOCSIFMARKWAKEPKT
+SIOCSIFESTTHROUGHPUT
+SIOCSIFRADIODETAILS
+SIOCSIFLINKQUALITYMETRIC
+SIOCSIFNOTRAFFICSHAPING
+SIOCGIFNOTRAFFICSHAPING
+SIOCGIFGENERATIONID
+SIOCGIFULTRACONSTRAINED
+SIOCSIFULTRACONSTRAINED
+SIOCSIFPEEREGRESSFUNCTIONALTYPE
+SIOCSIFDIRECTLINK
+SIOCSIFISVPN
+SIOCSIFDELAYWAKEPKTEVENT
+SIOCGIFDELAYWAKEPKTEVENT
+SIOCSIFDISABLEINPUT
+SIOCGIFDISABLEINPUT
+SIOCSIFCONGESTEDLINK
+SIOCGIFCONGESTEDLINK
+SIOCSIFISCOMPANIONLINK
+SIOCSIFL4S
+SIOCGIFL4S
+DIOCSTART
+DIOCSTOP
+DIOCADDRULE
+DIOCGETSTARTERS
+DIOCGETRULES
+DIOCGETRULE
+DIOCSTARTREF
+DIOCSTOPREF
+DIOCCLRSTATES
+DIOCGETSTATE
+DIOCSETSTATUSIF
+DIOCGETSTATUS
+DIOCCLRSTATUS
+DIOCNATLOOK
+DIOCSETDEBUG
+DIOCGETSTATES
+DIOCCHANGERULE
+DIOCINSERTRULE
+DIOCDELETERULE
+DIOCSETTIMEOUT
+DIOCGETTIMEOUT
+DIOCADDSTATE
+DIOCCLRRULECTRS
+DIOCGETLIMIT
+DIOCSETLIMIT
+DIOCKILLSTATES
+DIOCSTARTALTQ
+DIOCSTOPALTQ
+DIOCADDALTQ
+DIOCGETALTQS
+DIOCGETALTQ
+DIOCCHANGEALTQ
+DIOCGETQSTATS
+DIOCBEGINADDRS
+DIOCADDADDR
+DIOCGETADDRS
+DIOCGETADDR
+DIOCCHANGEADDR
+DIOCGETRULESETS
+DIOCGETRULESET
+DIOCRCLRTABLES
+DIOCRADDTABLES
+DIOCRDELTABLES
+DIOCRGETTABLES
+DIOCRGETTSTATS
+DIOCRCLRTSTATS
+DIOCRCLRADDRS
+DIOCRADDADDRS
+DIOCRDELADDRS
+DIOCRSETADDRS
+DIOCRGETADDRS
+DIOCRGETASTATS
+DIOCRCLRASTATS
+DIOCRTSTADDRS
+DIOCRSETTFLAGS
+DIOCRINADEFINE
+DIOCOSFPFLUSH
+DIOCOSFPADD
+DIOCOSFPGET
+DIOCXBEGIN
+DIOCXCOMMIT
+DIOCXROLLBACK
+DIOCGETSRCNODES
+DIOCCLRSRCNODES
+DIOCSETHOSTID
+DIOCIGETIFACES
+DIOCSETIFFLAG
+DIOCCLRIFFLAG
+DIOCKILLSRCNODES
+DIOCGIFSPEED
+SIOCSIFADDR_IN6
+SIOCGIFADDR_IN6
+SIOCSIFDSTADDR_IN6
+SIOCSIFNETMASK_IN6
+SIOCGIFDSTADDR_IN6
+SIOCGIFNETMASK_IN6
+SIOCDIFADDR_IN6
+SIOCAIFADDR_IN6
+SIOCSIFPHYADDR_IN6
+SIOCGIFPSRCADDR_IN6
+SIOCGIFPDSTADDR_IN6
+SIOCGIFAFLAG_IN6
+SIOCGIFINFO_IN6
+SIOCSNDFLUSH_IN6
+SIOCGNBRINFO_IN6
+SIOCSPFXFLUSH_IN6
+SIOCSRTRFLUSH_IN6
+SIOCGIFALIFETIME_IN6
+SIOCSIFALIFETIME_IN6
+SIOCGIFSTAT_IN6
+SIOCGIFSTAT_ICMP6
+SIOCSDEFIFACE_IN6
+SIOCGDEFIFACE_IN6
+SIOCSIFINFO_FLAGS
+SIOCSSCOPE6
+SIOCGSCOPE6
+SIOCGSCOPE6DEF
+SIOCSIFPREFIX_IN6
+SIOCGIFPREFIX_IN6
+SIOCDIFPREFIX_IN6
+SIOCAIFPREFIX_IN6
+SIOCCIFPREFIX_IN6
+SIOCSGIFPREFIX_IN6
+SIOCGETSGCNT_IN6
+SIOCGETMIFCNT_IN6
+SIOCAADDRCTL_POLICY
+SIOCDADDRCTL_POLICY
+TIOCMODG
+TIOCMODS
+TIOCEXCL
+TIOCNXCL
+TIOCFLUSH
+TIOCGETA
+TIOCSETA
+TIOCSETAW
+TIOCSETAF
+TIOCGETD
+TIOCSETD
+TIOCIXON
+TIOCIXOFF
+TIOCSBRK
+TIOCCBRK
+TIOCSDTR
+TIOCCDTR
+TIOCGPGRP
+TIOCSPGRP
+TIOCOUTQ
+TIOCSTI
+TIOCNOTTY
+TIOCPKT
+TIOCSTOP
+TIOCSTART
+TIOCMSET
+TIOCMBIS
+TIOCMBIC
+TIOCMGET
+TIOCGWINSZ
+TIOCSWINSZ
+TIOCUCNTL
+TIOCSTAT
+TIOCSCONS
+TIOCCONS
+TIOCSCTTY
+TIOCEXT
+TIOCSIG
+TIOCDRAIN
+TIOCMSDTRWAIT
+TIOCMGDTRWAIT
+TIOCTIMESTAMP
+TIOCDCDTIMESTAMP
+TIOCSDRAINWAIT
+TIOCGDRAINWAIT
+TIOCDSIMICROCODE
+TIOCPTYGRANT
+TIOCPTYUNLK
+PPPIOCGFLAGS
+PPPIOCSFLAGS
+PPPIOCGASYNCMAP
+PPPIOCSASYNCMAP
+PPPIOCGUNIT
+PPPIOCGRASYNCMAP
+PPPIOCSRASYNCMAP
+PPPIOCGMRU
+PPPIOCSMRU
+PPPIOCSMAXCID
+PPPIOCGXASYNCMAP
+PPPIOCSXASYNCMAP
+PPPIOCXFERUNIT
+PPPIOCSCOMPRESS
+PPPIOCGNPMODE
+PPPIOCSNPMODE
+PPPIOCGIDLE
+PPPIOCSPASS
+PPPIOCSACTIVE
+PPPIOCGMTU
+PPPIOCSMTU
+SIOCGPPPSTATS
+SIOCGPPPCSTATS
+XCPMIO_GET_VERSION
+XCPMIO_GET_PSTATE_TABLE
+XCPMIO_GET_PSTATE_LIMITS
+XCPMIO_SET_PSTATE_LIMITS
+XCPMIO_GET_CSTATE_INFO
+XCPMIO_SET_CSTATE_INFO
+XCPMIO_GET_FREQ_VECTORS
+XCPMIO_SET_FREQ_VECTORS
+XCPMIO_DVFS_STOP
+XCPMIO_DVFS_START
+XCPMIO_GET_FORCED_IDLE
+XCPMIO_SET_FORCED_IDLE
+XCPMIO_SET_PSTATE
+XCPMIO_GET_PSTATE_CTRS
+XCPMIO_ENABLE_PSTATE_CTRS
+XCPMIO_SET_PSTATE_TABLE
+XCPMIO_SET_SOFT_PSTATE_LIMITS
+XCPMIO_GET_SOFT_PSTATE_LIMITS
+XCPMIO_GET_CPU_STATUS
+XCPMIO_GET_LIMIT_STATS
+XCPMIO_SET_THERMAL_LEVELS
+XCPMIO_GET_THERMAL_LEVELS
+XCPMIO_GET_QOS_NAMES
+XCPMIO_GET_QOS_TIMES
+XCPMIO_SET_MIN_THERMAL_LEVELS
+XCPMIO_GET_MIN_THERMAL_LEVELS
+XCPMIO_POLL_THERMAL_LEVELS
+XCPMIO_SET_QOS_THERMAL_THRESHOLDS
+XCPMIO_GET_QOS_THERMAL_THRESHOLDS
+XCPMIO_WS_STAT_UPDATE
+XCPMIO_UI_BOOST_CONTROL
+XCPMIO_SET_POWER_SOURCE
+XCPMIO_SET_UIBOOST_HARD_PSTATE_LIMITS
+XCPMIO_GET_UIBOOST_HARD_PSTATE_LIMITS
+XCPMIO_LPM_CONTROL
+BIOC*BLEN
+BIOCSETF
+BIOCFLUSH
+BIOCPROMISC
+BIOCGDLT
+BIOCGETIF
+BIOCSETIF
+BIOCSRTIMEOUT
+BIOCGRTIMEOUT
+BIOCGSTATS
+BIOCIMMEDIATE
+BIOCVERSION
+BIOCGRSIG
+BIOCSRSIG
+BIOCGHDRCMPLT
+BIOCSHDRCMPLT
+BIOCGSEESENT
+BIOCSSEESENT
+BIOCSDLT
+BIOCGDLTLIST
+BIOCSETFNR
+BIOCGETTC
+BIOCSETTC
+BIOCSEXTHDR
+BIOCGIFATTACHCOUNT
+BIOC*WANTPKTAP
+BIOC*HEADDROP
+BIOCSTRUNCATE
+BIOCGETUUID
+BIOCSETUP
+BIOCSPKTHDRV2
+BIOCGPKTHDRV2
+BIOCGHDRCOMP
+BIOCSHDRCOMP
+BIOCGHDRCOMPSTATS
+BIOCGHDRCOMPON
+BIOCGDIRECTION
+BIOCSDIRECTION
+BIOCSWRITEMAX
+BIOCGWRITEMAX
+BIOCGBATCHWRITE
+BIOCSBATCHWRITE
+BIOCGNOTSTAMP
+BIOCSNOTSTAMP
+BIOCGDVRTIN
+BIOCSDVRTIN
+SYS_syscall
+SYS_exit
+SYS_fork
+SYS_read
+SYS_write
+SYS_open
+SYS_close
+SYS_wait4
+SYS_link
+SYS_unlink
+SYS_chdir
+SYS_fchdir
+SYS_mknod
+SYS_chmod
+SYS_chown
+SYS_getfsstat
+SYS_getpid
+SYS_setuid
+SYS_getuid
+SYS_geteuid
+SYS_ptrace
+SYS_recvmsg
+SYS_sendmsg
+SYS_recvfrom
+SYS_accept
+SYS_getpeername
+SYS_getsockname
+SYS_access
+SYS_chflags
+SYS_fchflags
+SYS_sync
+SYS_kill
+SYS_crossarch_trap
+SYS_getppid
+SYS_dup
+SYS_pipe
+SYS_getegid
+SYS_sigaction
+SYS_getgid
+SYS_sigprocmask
+SYS_getlogin
+SYS_setlogin
+SYS_acct
+SYS_sigpending
+SYS_sigaltstack
+SYS_ioctl
+SYS_reboot
+SYS_revoke
+SYS_symlink
+SYS_readlink
+SYS_execve
+SYS_umask
+SYS_chroot
+SYS_msync
+SYS_vfork
+SYS_oslog_coproc_reg
+SYS_oslog_coproc
+SYS_munmap
+SYS_mprotect
+SYS_madvise
+SYS_mincore
+SYS_getgroups
+SYS_setgroups
+SYS_getpgrp
+SYS_setpgid
+SYS_setitimer
+SYS_swapon
+SYS_getitimer
+SYS_getdtablesize
+SYS_dup2
+SYS_fcntl
+SYS_select
+SYS_fsync
+SYS_setpriority
+SYS_socket
+SYS_connect
+SYS_getpriority
+SYS_bind
+SYS_setsockopt
+SYS_listen
+SYS_sigsuspend
+SYS_gettimeofday
+SYS_getrusage
+SYS_getsockopt
+SYS_readv
+SYS_writev
+SYS_settimeofday
+SYS_fchown
+SYS_fchmod
+SYS_setreuid
+SYS_setregid
+SYS_rename
+SYS_flock
+SYS_mkfifo
+SYS_sendto
+SYS_shutdown
+SYS_socketpair
+SYS_mkdir
+SYS_rmdir
+SYS_utimes
+SYS_futimes
+SYS_adjtime
+SYS_gethostuuid
+SYS_setsid
+SYS_getpgid
+SYS_setprivexec
+SYS_pread
+SYS_pwrite
+SYS_nfssvc
+SYS_statfs
+SYS_fstatfs
+SYS_unmount
+SYS_getfh
+SYS_funmount
+SYS_quotactl
+SYS_mount
+SYS_csops
+SYS_csops_audittoken
+SYS_waitid
+SYS_kdebug_typefilter
+SYS_kdebug_trace_string
+SYS_kdebug_trace64
+SYS_kdebug_trace
+SYS_setgid
+SYS_setegid
+SYS_seteuid
+SYS_sigreturn
+SYS_panic_with_data
+SYS_thread_selfcounts
+SYS_fdatasync
+SYS_stat
+SYS_fstat
+SYS_lstat
+SYS_pathconf
+SYS_fpathconf
+SYS_getrlimit
+SYS_setrlimit
+SYS_getdirentries
+SYS_mmap
+SYS_lseek
+SYS_truncate
+SYS_ftruncate
+SYS_sysctl
+SYS_mlock
+SYS_munlock
+SYS_undelete
+SYS_open_dprotected_np
+SYS_fsgetpath_ext
+SYS_openat_dprotected_np
+SYS_getattrlist
+SYS_setattrlist
+SYS_getdirentriesattr
+SYS_exchangedata
+SYS_searchfs
+SYS_delete
+SYS_copyfile
+SYS_fgetattrlist
+SYS_fsetattrlist
+SYS_poll
+SYS_getxattr
+SYS_fgetxattr
+SYS_setxattr
+SYS_fsetxattr
+SYS_removexattr
+SYS_fremovexattr
+SYS_listxattr
+SYS_flistxattr
+SYS_fsctl
+SYS_initgroups
+SYS_posix_spawn
+SYS_ffsctl
+SYS_fhopen
+SYS_minherit
+SYS_semsys
+SYS_msgsys
+SYS_shmsys
+SYS_semctl
+SYS_semget
+SYS_semop
+SYS_msgctl
+SYS_msgget
+SYS_msgsnd
+SYS_msgrcv
+SYS_shmat
+SYS_shmctl
+SYS_shmdt
+SYS_shmget
+SYS_shm_open
+SYS_shm_unlink
+SYS_sem_open
+SYS_sem_close
+SYS_sem_unlink
+SYS_sem_wait
+SYS_sem_trywait
+SYS_sem_post
+SYS_sysctlbyname
+SYS_open_extended
+SYS_umask_extended
+SYS_stat_extended
+SYS_lstat_extended
+SYS_fstat_extended
+SYS_chmod_extended
+SYS_fchmod_extended
+SYS_access_extended
+SYS_settid
+SYS_gettid
+SYS_setsgroups
+SYS_getsgroups
+SYS_setwgroups
+SYS_getwgroups
+SYS_mkfifo_extended
+SYS_mkdir_extended
+SYS_identitysvc
+SYS_shared_region_check_np
+SYS_vm_pressure_monitor
+SYS_psynch_rw_longrdlock
+SYS_psynch_rw_yieldwrlock
+SYS_psynch_rw_downgrade
+SYS_psynch_rw_upgrade
+SYS_psynch_mutexwait
+SYS_psynch_mutexdrop
+SYS_psynch_cvbroad
+SYS_psynch_cvsignal
+SYS_psynch_cvwait
+SYS_psynch_rw_rdlock
+SYS_psynch_rw_wrlock
+SYS_psynch_rw_unlock
+SYS_psynch_rw_unlock2
+SYS_getsid
+SYS_settid_with_pid
+SYS_psynch_cvclrprepost
+SYS_aio_fsync
+SYS_aio_return
+SYS_aio_suspend
+SYS_aio_cancel
+SYS_aio_error
+SYS_aio_read
+SYS_aio_write
+SYS_lio_listio
+SYS_iopolicysys
+SYS_process_policy
+SYS_mlockall
+SYS_munlockall
+SYS_issetugid
+SYS___pthread_kill
+SYS___pthread_sigmask
+SYS___sigwait
+SYS___disable_threadsignal
+SYS___pthread_markcancel
+SYS___pthread_canceled
+SYS___semwait_signal
+SYS_proc_info
+SYS_sendfile
+SYS_stat64
+SYS_fstat64
+SYS_lstat64
+SYS_stat64_extended
+SYS_lstat64_extended
+SYS_fstat64_extended
+SYS_getdirentries64
+SYS_statfs64
+SYS_fstatfs64
+SYS_getfsstat64
+SYS___pthread_chdir
+SYS___pthread_fchdir
+SYS_audit
+SYS_auditon
+SYS_getauid
+SYS_setauid
+SYS_getaudit_addr
+SYS_setaudit_addr
+SYS_auditctl
+SYS_bsdthread_create
+SYS_bsdthread_terminate
+SYS_kqueue
+SYS_kevent
+SYS_lchown
+SYS_bsdthread_register
+SYS_workq_open
+SYS_workq_kernreturn
+SYS_kevent64
+SYS_thread_selfid
+SYS_ledger
+SYS_kevent_qos
+SYS_kevent_id
+SYS___mac_execve
+SYS___mac_syscall
+SYS___mac_get_file
+SYS___mac_set_file
+SYS___mac_get_link
+SYS___mac_set_link
+SYS___mac_get_proc
+SYS___mac_set_proc
+SYS___mac_get_fd
+SYS___mac_set_fd
+SYS___mac_get_pid
+SYS_pselect
+SYS_pselect_nocancel
+SYS_read_nocancel
+SYS_write_nocancel
+SYS_open_nocancel
+SYS_close_nocancel
+SYS_wait4_nocancel
+SYS_recvmsg_nocancel
+SYS_sendmsg_nocancel
+SYS_recvfrom_nocancel
+SYS_accept_nocancel
+SYS_msync_nocancel
+SYS_fcntl_nocancel
+SYS_select_nocancel
+SYS_fsync_nocancel
+SYS_connect_nocancel
+SYS_sigsuspend_nocancel
+SYS_readv_nocancel
+SYS_writev_nocancel
+SYS_sendto_nocancel
+SYS_pread_nocancel
+SYS_pwrite_nocancel
+SYS_waitid_nocancel
+SYS_poll_nocancel
+SYS_msgsnd_nocancel
+SYS_msgrcv_nocancel
+SYS_sem_wait_nocancel
+SYS_aio_suspend_nocancel
+SYS___sigwait_nocancel
+SYS___semwait_signal_nocancel
+SYS___mac_mount
+SYS___mac_get_mount
+SYS___mac_getfsstat
+SYS_fsgetpath
+SYS_audit_session_self
+SYS_audit_session_join
+SYS_fileport_makeport
+SYS_fileport_makefd
+SYS_audit_session_port
+SYS_pid_suspend
+SYS_pid_resume
+SYS_pid_hibernate
+SYS_pid_shutdown_sockets
+SYS_kas_info
+SYS_memorystatus_control
+SYS_guarded_open_np
+SYS_guarded_close_np
+SYS_guarded_kqueue_np
+SYS_change_fdguard_np
+SYS_usrctl
+SYS_proc_rlimit_control
+SYS_connectx
+SYS_disconnectx
+SYS_peeloff
+SYS_socket_delegate
+SYS_telemetry
+SYS_proc_uuid_policy
+SYS_memorystatus_get_level
+SYS_system_override
+SYS_vfs_purge
+SYS_sfi_ctl
+SYS_sfi_pidctl
+SYS_coalition
+SYS_coalition_info
+SYS_necp_match_policy
+SYS_getattrlistbulk
+SYS_clonefileat
+SYS_openat
+SYS_openat_nocancel
+SYS_renameat
+SYS_faccessat
+SYS_fchmodat
+SYS_fchownat
+SYS_fstatat
+SYS_fstatat64
+SYS_linkat
+SYS_unlinkat
+SYS_readlinkat
+SYS_symlinkat
+SYS_mkdirat
+SYS_getattrlistat
+SYS_proc_trace_log
+SYS_bsdthread_ctl
+SYS_openbyid_np
+SYS_recvmsg_x
+SYS_sendmsg_x
+SYS_thread_selfusage
+SYS_csrctl
+SYS_guarded_open_dprotected_np
+SYS_guarded_write_np
+SYS_guarded_pwrite_np
+SYS_guarded_writev_np
+SYS_renameatx_np
+SYS_mremap_encrypted
+SYS_netagent_trigger
+SYS_stack_snapshot_with_config
+SYS_microstackshot
+SYS_grab_pgo_data
+SYS_persona
+SYS_mach_eventlink_signal
+SYS_mach_eventlink_wait_until
+SYS_mach_eventlink_signal_wait_until
+SYS_work_interval_ctl
+SYS_getentropy
+SYS_necp_open
+SYS_necp_client_action
+SYS___nexus_open
+SYS___nexus_register
+SYS___nexus_deregister
+SYS___nexus_create
+SYS___nexus_destroy
+SYS___nexus_get_opt
+SYS___nexus_set_opt
+SYS___channel_open
+SYS___channel_get_info
+SYS___channel_sync
+SYS___channel_get_opt
+SYS___channel_set_opt
+SYS_ulock_wait
+SYS_ulock_wake
+SYS_fclonefileat
+SYS_fs_snapshot
+SYS_register_uexc_handler
+SYS_terminate_with_payload
+SYS_abort_with_payload
+SYS_necp_session_open
+SYS_necp_session_action
+SYS_setattrlistat
+SYS_net_qos_guideline
+SYS_fmount
+SYS_ntp_adjtime
+SYS_ntp_gettime
+SYS_os_fault_with_payload
+SYS_kqueue_workloop_ctl
+SYS___mach_bridge_remote_time
+SYS_coalition_ledger
+SYS_log_data
+SYS_memorystatus_available_memory
+SYS_objc_bp_assist_cfg_np
+SYS_shared_region_map_and_slide_2_np
+SYS_pivot_root
+SYS_task_inspect_for_pid
+SYS_task_read_for_pid
+SYS_preadv
+SYS_pwritev
+SYS_preadv_nocancel
+SYS_pwritev_nocancel
+SYS_ulock_wait2
+SYS_proc_info_extended_id
+SYS_tracker_action
+SYS_debug_syscall_reject
+SYS_debug_syscall_reject_config
+SYS_graftdmg
+SYS_map_with_linking_np
+SYS_freadlink
+SYS_record_system_event
+SYS_mkfifoat
+SYS_mknodat
+SYS_ungraftdmg
+SYS_coalition_policy_set
+SYS_coalition_policy_get
+SYS_invalid
+MSC__kernelrpc_mach_vm_allocate_trap
+MSC__kernelrpc_mach_vm_purgable_control_trap
+MSC__kernelrpc_mach_vm_deallocate_trap
+MSC_task_dyld_process_info_notify_get
+MSC__kernelrpc_mach_vm_protect_trap
+MSC__kernelrpc_mach_vm_map_trap
+MSC__kernelrpc_mach_port_allocate_trap
+MSC__kernelrpc_mach_port_deallocate_trap
+MSC__kernelrpc_mach_port_mod_refs_trap
+MSC__kernelrpc_mach_port_move_member_trap
+MSC__kernelrpc_mach_port_insert_right_trap
+MSC__kernelrpc_mach_port_insert_member_trap
+MSC__kernelrpc_mach_port_extract_member_trap
+MSC__kernelrpc_mach_port_construct_trap
+MSC__kernelrpc_mach_port_destruct_trap
+MSC_mach_reply_port
+MSC_thread_self_trap
+MSC_task_self_trap
+MSC_host_self_trap
+MSC_mach_msg_trap
+MSC_mach_msg_overwrite_trap
+MSC_semaphore_signal_trap
+MSC_semaphore_signal_all_trap
+MSC_semaphore_signal_thread_trap
+MSC_semaphore_wait_trap
+MSC_semaphore_wait_signal_trap
+MSC_semaphore_timedwait_trap
+MSC_semaphore_timedwait_signal_trap
+MSC__kernelrpc_mach_port_get_attributes_trap
+MSC__kernelrpc_mach_port_guard_trap
+MSC__kernelrpc_mach_port_unguard_trap
+MSC_mach_generate_activity_id
+MSC_task_name_for_pid
+MSC_task_for_pid
+MSC_pid_for_task
+MSC_mach_msg2_trap
+MSC_macx_swapon
+MSC_macx_swapoff
+MSC_thread_get_special_reply_port
+MSC_macx_triggers
+MSC_macx_backing_store_suspend
+MSC_macx_backing_store_recovery
+MSC_pfz_exit
+MSC_swtch_pri
+MSC_swtch
+MSC_syscall_thread_switch
+MSC_clock_sleep_trap
+MSC_mach_vm_reclaim_update_kernel_accounting_trap
+MSC_host_create_mach_voucher_trap
+MSC_mach_voucher_extract_attr_recipe_trap
+MSC__kernelrpc_mach_port_type_trap
+MSC__kernelrpc_mach_port_request_notification_trap
+MSC__exclaves_ctl_trap
+MSC_mach_timebase_info_trap
+MSC_mach_wait_until
+MSC_mk_timer_create
+MSC_mk_timer_destroy
+MSC_mk_timer_arm
+MSC_mk_timer_cancel
+MSC_mk_timer_arm_leeway
+MSC_debug_control_port_for_pid
+MSC_iokit_user_client_trap
+MSC_thread_set_x86_64_compat
+host_info
+host_kernel_version
+host_page_size
+mach_memory_object_memory_entry
+host_processor_info
+host_get_io_master
+host_get_clock_service
+kmod_get_info
+host_virtual_physical_table_info
+processor_set_default
+mach_memory_object_memory_entry_64
+host_statistics_from_user
+host_request_notification
+host_lockgroup_info
+host_statistics64_from_user
+mach_zone_info
+mach_zone_force_gc
+host_create_mach_voucher
+host_set_atm_diagnostic_flag
+mach_memory_info
+host_set_multiuser_config_flags
+mach_zone_info_for_zone
+mach_zone_info_for_largest_zone
+mach_zone_get_zlog_zones
+mach_zone_get_btlog_records
+mach_memory_info_redacted
+host_get_boot_info
+host_reboot
+host_priv_statistics
+host_default_memory_manager
+vm_wire
+thread_wire
+host_processors
+host_get_special_port
+host_set_special_port
+host_set_exception_ports
+host_get_exception_ports
+host_swap_exception_ports
+mach_vm_wire_external
+host_processor_sets
+host_processor_set_priv
+host_set_UNDServer
+host_get_UNDServer
+kext_request
+clock_get_time
+clock_get_attributes
+clock_alarm
+exception_raise
+exception_raise_state
+exception_raise_state_identity
+mach_exception_raise
+mach_exception_raise_state
+mach_exception_raise_state_identity
+io_object_get_class
+io_object_conforms_to
+io_iterator_next
+io_iterator_reset
+io_service_get_matching_services
+io_registry_entry_get_property
+io_registry_create_iterator
+io_registry_iterator_enter_entry
+io_registry_iterator_exit_entry
+io_registry_entry_from_path
+io_registry_entry_get_name
+io_registry_entry_get_properties
+io_registry_entry_get_property_bytes
+io_registry_entry_get_child_iterator
+io_registry_entry_get_parent_iterator
+io_connect_map_shared_memory
+io_service_close
+io_connect_get_service
+io_connect_set_notification_port
+io_connect_map_memory
+io_connect_add_client
+io_connect_set_properties
+io_connect_method_scalarI_scalarO
+io_connect_method_scalarI_structureO
+io_connect_method_scalarI_structureI
+io_connect_method_structureI_structureO
+io_registry_entry_get_path
+io_registry_get_root_entry
+io_registry_entry_set_properties
+io_registry_entry_in_plane
+io_object_get_retain_count
+io_service_get_busy_state
+io_service_wait_quiet
+io_registry_entry_create_iterator
+io_iterator_is_valid
+io_catalog_send_data
+io_catalog_terminate
+io_catalog_get_data
+io_catalog_get_gen_count
+io_catalog_module_loaded
+io_catalog_reset
+io_service_request_probe
+io_registry_entry_get_name_in_plane
+io_service_match_property_table
+io_async_method_scalarI_scalarO
+io_async_method_scalarI_structureO
+io_async_method_scalarI_structureI
+io_async_method_structureI_structureO
+io_service_add_notification
+io_service_add_interest_notification
+io_service_acknowledge_notification
+io_connect_get_notification_semaphore
+io_connect_unmap_memory
+io_registry_entry_get_location_in_plane
+io_registry_entry_get_property_recursively
+io_service_get_state
+io_service_get_matching_services_ool
+io_service_match_property_table_ool
+io_service_add_notification_ool
+io_object_get_superclass
+io_object_get_bundle_identifier
+io_service_open_extended
+io_connect_map_memory_into_task
+io_connect_unmap_memory_from_task
+io_connect_method
+io_connect_async_method
+io_connect_set_notification_port_64
+io_service_add_notification_64
+io_service_add_interest_notification_64
+io_service_add_notification_ool_64
+io_registry_entry_get_registry_entry_id
+io_connect_method_var_output
+io_service_get_matching_service
+io_service_get_matching_service_ool
+io_service_get_authorization_id
+io_service_set_authorization_id
+io_server_version
+io_registry_entry_get_properties_bin
+io_registry_entry_get_property_bin
+io_service_get_matching_service_bin
+io_service_get_matching_services_bin
+io_service_match_property_table_bin
+io_service_add_notification_bin
+io_service_add_notification_bin_64
+io_registry_entry_get_path_ool
+io_registry_entry_from_path_ool
+io_device_tree_entry_exists_with_name
+io_registry_entry_get_properties_bin_buf
+io_registry_entry_get_property_bin_buf
+io_service_wait_quiet_with_options
+processor_start_from_user
+processor_exit_from_user
+processor_info
+processor_control
+processor_assign
+processor_get_assignment
+mach_port_names
+mach_port_type
+mach_port_allocate_name
+mach_port_allocate
+mach_port_destroy
+mach_port_deallocate
+mach_port_get_refs
+mach_port_mod_refs
+mach_port_peek
+mach_port_set_mscount
+mach_port_get_set_status_from_user
+mach_port_move_member
+mach_port_request_notification
+mach_port_insert_right
+mach_port_extract_right
+mach_port_set_seqno
+mach_port_get_attributes_from_user
+mach_port_set_attributes
+mach_port_allocate_qos
+mach_port_allocate_full
+task_set_port_space
+mach_port_get_srights
+mach_port_space_info_from_user
+mach_port_dnrequest_info
+mach_port_insert_member
+mach_port_extract_member
+mach_port_get_context_from_user
+mach_port_set_context
+mach_port_kobject_from_user
+mach_port_construct
+mach_port_destruct
+mach_port_guard
+mach_port_unguard
+mach_port_space_basic_info
+mach_port_special_reply_port_reset_link
+mach_port_guard_with_flags
+mach_port_swap_guard
+mach_port_kobject_description_from_user
+mach_port_is_connection_for_service
+mach_port_get_service_port_info
+mach_port_assert_attributes
+task_terminate
+task_threads_from_user
+mach_ports_register
+mach_ports_lookup
+task_info_from_user
+task_set_info
+task_suspend
+task_resume
+task_get_special_port_from_user
+task_set_special_port
+thread_create_from_user
+thread_create_running_from_user
+task_set_exception_ports
+task_get_exception_ports_from_user
+task_swap_exception_ports
+semaphore_create
+semaphore_destroy
+task_policy_set
+task_policy_get
+task_get_state
+task_set_state
+task_set_phys_footprint_limit
+task_suspend2
+task_resume2
+task_purgable_info
+task_get_mach_voucher
+task_set_mach_voucher
+task_swap_mach_voucher
+task_generate_corpse
+task_map_corpse_info
+task_register_dyld_image_infos
+task_unregister_dyld_image_infos
+task_get_dyld_image_infos
+task_register_dyld_shared_cache_image_info
+task_register_dyld_set_dyld_state
+task_register_dyld_get_process_state
+task_map_corpse_info_64
+task_inspect
+task_get_exc_guard_behavior
+task_set_exc_guard_behavior
+mach_task_is_self
+task_dyld_process_info_notify_register
+task_create_identity_token
+task_identity_token_get_task_port
+task_dyld_process_info_notify_deregister
+task_get_exception_ports_info
+task_test_sync_upcall
+task_set_corpse_forking_behavior
+task_test_async_upcall_propagation
+task_map_kcdata_object_64
+task_register_hardened_exception_handler
+thread_terminate
+act_get_state_to_user
+act_set_state_from_user
+thread_get_state_to_user
+thread_set_state_from_user
+thread_suspend
+thread_resume
+thread_abort
+thread_abort_safely
+thread_depress_abort_from_user
+thread_get_special_port_from_user
+thread_set_special_port
+thread_info
+thread_set_exception_ports
+thread_get_exception_ports_from_user
+thread_swap_exception_ports
+thread_policy
+thread_policy_set
+thread_policy_get
+thread_set_policy
+thread_get_mach_voucher
+thread_set_mach_voucher
+thread_swap_mach_voucher
+thread_convert_thread_state
+thread_raise_exception
+thread_get_exception_ports_info
+thread_adopt_exception_handler
+thread_suspend2
+thread_resume2
+vm_region
+vm_allocate_external
+vm_deallocate
+vm_protect
+vm_inherit
+vm_read
+vm_read_list
+vm_write
+vm_copy
+vm_read_overwrite
+vm_msync
+vm_behavior_set
+vm_map_external
+vm_machine_attribute
+vm_remap_external
+task_wire
+mach_make_memory_entry
+vm_map_page_query
+mach_vm_region_info
+vm_mapped_pages_info
+vm_region_recurse
+vm_region_recurse_64
+mach_vm_region_info_64
+vm_region_64
+mach_make_memory_entry_64
+vm_map_64_external
+vm_purgable_control
+vm_map_exec_lockdown
+vm_remap_new_external
+vm_reallocate
+processor_set_statistics
+processor_set_tasks
+processor_set_info
+processor_set_tasks_with_flavor
+mach_vm_allocate_external
+mach_vm_deallocate_external
+mach_vm_protect
+mach_vm_inherit
+mach_vm_read
+mach_vm_read_list
+mach_vm_write
+mach_vm_copy
+mach_vm_read_overwrite
+mach_vm_msync
+mach_vm_behavior_set
+mach_vm_map_external
+mach_vm_machine_attribute
+mach_vm_remap_external
+mach_vm_page_query
+mach_vm_region_recurse
+mach_vm_region
+_mach_make_memory_entry
+mach_vm_purgable_control
+mach_vm_page_info
+mach_vm_page_range_query
+mach_vm_remap_new_external
+mach_vm_deferred_reclamation_buffer_allocate
+mach_vm_deferred_reclamation_buffer_flush
+mach_vm_range_create
+mach_vm_deferred_reclamation_buffer_resize
+mach_vm_update_pointers_with_remote_tags
+mach_vm_deferred_reclamation_buffer_query
+mach_vm_reallocate
+mach_memory_entry_purgable_control
+mach_memory_entry_access_tracking
+mach_memory_entry_ownership
+mach_memory_entry_get_page_counts
+mach_voucher_extract_attr_content
+mach_voucher_extract_attr_recipe
+mach_voucher_extract_all_attr_recipes
+mach_voucher_attr_command
+mach_voucher_debug_info
+UNDAlertCompletedWithResult_rpc
+UNDNotificationCreated_rpc
+task_restartable_ranges_register
+task_restartable_ranges_synchronize
+arcade_register_new_upcall
+mach_eventlink_create
+mach_eventlink_destroy
+mach_eventlink_associate
+mach_eventlink_disassociate
+KAS_INFO_KERNEL_TEXT_SLIDE_SELECTOR
+KAS_INFO_KERNEL_SEGMENT_VMADDR_SELECTOR
+KAS_INFO_SPTM_TEXT_SLIDE_SELECTOR
+KAS_INFO_TXM_TEXT_SLIDE_SELECTOR
+IOPOL_TYPE_DISK
+IOPOL_TYPE_VFS_ATIME_UPDATES
+IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES
+IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME
+IOPOL_TYPE_VFS_TRIGGER_RESOLVE
+IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION
+IOPOL_TYPE_VFS_IGNORE_PERMISSIONS
+IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE
+IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES
+IOPOL_TYPE_VFS_DISALLOW_RW_FOR_O_EVTONLY
+IOPOL_TYPE_VFS_ENTITLED_RESERVE_ACCESS
+IOPOL_TYPE_VFS_HFS_CASE_SENSITIVITY
+IOPOL_TYPE_VFS_ALTLINK
+IOPOL_TYPE_VFS_NOCACHE_WRITE_FS_BLKSIZE
+IOPOL_TYPE_VFS_SUPPORT_LONG_PATHS
+IOPOL_SCOPE_PROCESS
+IOPOL_SCOPE_THREAD
+IOPOL_SCOPE_DARWIN_BG
+IOPOL_DEFAULT
+IOPOL_IMPORTANT
+IOPOL_PASSIVE
+IOPOL_THROTTLE
+IOPOL_UTILITY
+IOPOL_STANDARD
+IOPOL_APPLICATION
+IOPOL_NORMAL
+IOPOL_ATIME_UPDATES_DEFAULT
+IOPOL_ATIME_UPDATES_OFF
+IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT
+IOPOL_MATERIALIZE_DATALESS_FILES_OFF
+IOPOL_MATERIALIZE_DATALESS_FILES_ON
+IOPOL_MATERIALIZE_DATALESS_FILES_ORIG
+IOPOL_MATERIALIZE_DATALESS_FILES_BASIC_MASK
+IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT
+IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME
+IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT
+IOPOL_VFS_TRIGGER_RESOLVE_OFF
+IOPOL_VFS_CONTENT_PROTECTION_DEFAULT
+IOPOL_VFS_CONTENT_PROTECTION_IGNORE
+IOPOL_VFS_IGNORE_PERMISSIONS_OFF
+IOPOL_VFS_IGNORE_PERMISSIONS_ON
+IOPOL_VFS_SKIP_MTIME_UPDATE_OFF
+IOPOL_VFS_SKIP_MTIME_UPDATE_ON
+IOPOL_VFS_SKIP_MTIME_UPDATE_IGNORE
+IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF
+IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON
+IOPOL_VFS_DISALLOW_RW_FOR_O_EVTONLY_DEFAULT
+IOPOL_VFS_DISALLOW_RW_FOR_O_EVTONLY_ON
+IOPOL_VFS_NOCACHE_WRITE_FS_BLKSIZE_DEFAULT
+IOPOL_VFS_NOCACHE_WRITE_FS_BLKSIZE_ON
+IOPOL_VFS_ENTITLED_RESERVE_ACCESS_OFF
+IOPOL_VFS_ENTITLED_RESERVE_ACCESS_ON
+IOPOL_VFS_HFS_CASE_SENSITIVITY_DEFAULT
+IOPOL_VFS_HFS_CASE_SENSITIVITY_FORCE_CASE_SENSITIVE
+IOPOL_VFS_ALTLINK_DISABLED
+IOPOL_VFS_ALTLINK_ENABLED
+IOPOL_VFS_SUPPORT_LONG_PATHS_DEFAULT
+IOPOL_VFS_SUPPORT_LONG_PATHS_ON
+mount-relative-path
+ipc-posix-name
+global-name
+local-name
+local
+remote
+control-name
+socket-domain
+socket-type
+socket-protocol
+children
+initproc
+others
+pgrp
+same-sandbox
+self
+fsctl-command
+ioctl-command
+iokit-connection
+device-major
+device-minor
+device-conforms-to
+appleevent-destination
+system-attribute
+apple-internal
+carrier-build
+darwin-os
+default-codesigning
+developer-mode
+factory-build
+internal-build
+private-cloud-os
+recovery-os
+restore-os
+restricted-execution-mode
+sandbox-debug-mode
+security-research-device
+security-research-device-extended-research-mode
+vendor-build
+virtual-device
+right-name
+BLOCK-DEVICE
+CHARACTER-DEVICE
+DIRECTORY
+FIFO
+REGULAR-FILE
+SOCKET
+SYMLINK
+TTY
+%entitlement-load
+%entitlement-boolean
+%entitlement-string
+info-type
+notification-name
+notification-payload
+semaphore-owner
+platform-binary
+sysctl-name
+process-path
+rootless-boot-device-filter
+rootless-disk-filter
+privilege-id
+process-attribute
+is-adhoc-signed-binary
+is-apple-signed-executable
+is-autoboxed
+is-catalyst-binary
+is-datavault-controller
+is-initproc
+is-installer
+is-nvram-privileged
+is-platform-binary
+is-plugin
+is-protoboxed
+is-restricted
+is-rsr-binary
+is-sandboxed
+is-sandcastle-constrained
+is-system-session-persona
+is-translated-binary
+is-unsigned-binary
+uid
+nvram-variable
+csr
+filesystem-name
+xpc-service-name
+signing-identifier
+signal-number
+target-signing-identifier
+datavault-disk-filter
+extension-path-ancestor
+file-attribute
+apfs-enterprise-volume
+apfs-preboot-volume
+apfs-recovery-volume
+apfs-synthetic
+datavault
+disk-image
+disk-image-backing-store
+disk-image-device
+fileprovider-ancestor
+fileprovider-owned
+fileprovider-syncroot
+has-multiple-names
+local-filesystem
+removable-device
+removable-media
+root-filesystem
+rsr-cryptex
+sip-protected
+sip-protected-device
+sip-protected-filesystem
+time-machine-backup
+time-machine-device
+union-mounted-filesystem
+app-bundle
+app-bundle-ancestor
+app-bundle-containing-responsible-binary
+app-container
+app-container-ancestor
+home-ancestor
+network-approval-exempt
+smb-home-mount-dir
+unregistered-app-bundle
+storage-class
+storage-class-extension
+iokit-usb-interface-class
+iokit-usb-interface-subclass
+ancestor-signing-identifier
+require-ancestor-with-entitlement
+persona-type
+syscall-number
+require-target-with-entitlement
+iokit-registry-entry-attribute
+ioservice-requires-approval
+user-intent-extension
+snapshot-name
+mach-derived-port-role
+message-number
+message-name
+iokit-method-number
+iokit-trap-number
+machtrap-number
+kernel-mig-routine
+fcntl-command
+socket-option-level
+socket-option-name
+mac-policy-name
+mac-syscall-number
+memorystatus-control-command
+state-flag
+require-responsible-binary-with-entitlement
+%entitlement-is-bool-true
+%entitlement-is-present
+fileprovider-syncroot-path
+mount-root-path
+codesigning-operation
+profile-flag
+kas-info-selector
+mach-exception-behavior
+mach-exception-type
+check-operation
+extension-token-type
+file-extension-token
+generic-extension-token
+iokit-extension-token
+mach-extension-token
+extension-token-attribute
+extension-token-is-process-bound
+iopolicy-type
+iopolicy-scope
+iopolicy-policy
+target-attribute
+exception-entitlement-name
+exception-entitlement-value
+sb_filter_has_side_effects
+filter.c
+filter < NUM_INFO_ENTRIES && filter_info[filter].name != NULL
+v8@?0
+sb_filter_string_values_are_mutually_exclusive
+info->type == SB_FILTER_TYPE_STRING
+sb_filter_values_are_serialized_via_string_table
+ip
+ip4
+ip6
+tcp
+tcp4
+tcp6
+udp
+udp4
+udp6
+lookup_filter_info
+sb_hash_finalize
+hash.c
+ctxp->hash != 0 || ctxp->count != 0
+sb_instr_retain
+instruction.c
+instr->type != INSTR_TYPE_UNUSED
+instr->refcnt > 0
+sb_instr_release
+instr->trackers_count <= instr->refcnt
+sb_instr_retain_tracking
+tracking_instrp != &instr->conditional.true_branch
+tracking_instrp != &instr->conditional.false_branch
+new_trackers_count > instr->trackers_count
+new_trackers_count <= instr->refcnt
+sb_instr_release_tracking
+%s called with non-tracking pointer %p
+sb_instr_get_indegree
+unsupported instruction type #%u
+sb_instr_jump
+sb_instr_get_jump_target
+sb_instr_is_jump(instr)
+sb_instr_action
+instr->context->delegate_action_count != 0
+instr->context->autobox_action_count != 0
+instr->type == INSTR_TYPE_ACTION
+sb_instr_get_action_modifiers
+instr->action.modifiers != NULL
+sb_instr_get_action_flags
+(flags & ACTION_INLINE_FLAG) == 0
+sb_instr_conditional
+context == sb_condition_get_context(condition)
+sb_instr_get_condition
+sb_instr_set_condition
+sb_instr_get_context(instr) == sb_condition_get_context(condition)
+sb_instr_get_true_branch
+sb_instr_set_true_branch
+sb_instr_get_context(instr) == sb_instr_get_context(true_branch)
+true_branch != instr
+sb_instr_get_false_branch
+sb_instr_set_false_branch
+sb_instr_get_context(instr) == sb_instr_get_context(false_branch)
+false_branch != instr
+too many nested visitors
+sb_visitor_new
+context->visitor_count > 0
+candidate_number >= 0 && candidate_number < MAX_NESTED_VISITORS
+visitor->refcnt > 0
+sb_visitor_release
+visitor->context->visitor_count > 0
+v28@?0I8^{_sb_instr=Ii(?={?=^{_sb_policy}I}{?=i^{_sb_modifiers}}{?=^{_sb_condition}^{_sb_instr}^{_sb_instr}})I^^^{_sb_instr}[8C]^{_sb_context}{?=^{_sb_instr}^^{_sb_instr}}{sb_source_info=*II}{_sb_annotation_list={?=^{_sb_annotation}}}}12^B20
+v24@?0^{_sb_instr=Ii(?={?=^{_sb_policy}I}{?=i^{_sb_modifiers}}{?=^{_sb_condition}^{_sb_instr}^{_sb_instr}})I^^^{_sb_instr}[8C]^{_sb_context}{?=^{_sb_instr}^^{_sb_instr}}{sb_source_info=*II}{_sb_annotation_list={?=^{_sb_annotation}}}}8^B16
+sb_instr_destroy
+instr->trackers_count == 0
+instr->context->delegate_action_count > 0
+instr->context->autobox_action_count > 0
+clear_visit_marker
+context->visitor_count >= 0 && context->visitor_count < MAX_NESTED_VISITORS
+_visitor_number
+idx >= 0 && idx < MAX_NESTED_VISITORS
+instr_stack_push
+sb_intern_pool_release
+intern.c
+total_used <= total_allocated
+sb_intern_bytes
+byte_count <= UINT_MAX
+integer overflow
+is_interned
+bytes_end <= buffer->bytes || bytes_start >= buffer_end
+intern_alloc
+(buffer->used_byte_count % __alignof(struct intern_entry)) == 0
+free_bytes_in_buffer
+used <= allocated
+expand_pool
+free_bytes_in_buffer(buffer) >= min_bytes
+expand_logical_conditions
+logical.c
+sb_condition_list_count(conditions) > 0
+sb_msgfilter_retain
+msgfilter.c
+msgfilter->refcnt > 0
+sb_msgfilter_release
+modifier.c
+modifier < SB_MODIFIER_COUNT
+modifier < NUM_INFO_ENTRIES && modifier_info[modifier].name != NULL
+sb_modifier_iterate_named_values
+sb_modifier_requires_argument
+modinfo->action_mask != 0
+0
+sb_modifier_apply_action_flags
+(modinfo->action_flag & ~modinfo->action_mask) == 0
+deny
+allow
+delegate
+autobox
+sb_modifier_requires_type
+EPERM
+ENOENT
+ESRCH
+EINTR
+EIO
+ENXIO
+ENOEXEC
+EBADF
+ECHILD
+EDEADLK
+ENOMEM
+EACCES
+EFAULT
+ENOTBLK
+EBUSY
+EEXIST
+EXDEV
+ENODEV
+ENOTDIR
+EISDIR
+EINVAL
+ENFILE
+EMFILE
+ENOTTY
+ETXTBSY
+EFBIG
+ENOSPC
+ESPIPE
+EROFS
+EMLINK
+EPIPE
+EDOM
+ERANGE
+EAGAIN
+EWOULDBLOCK
+EINPROGRESS
+EALREADY
+ENOTSOCK
+EDESTADDRREQ
+EMSGSIZE
+EPROTOTYPE
+ENOPROTOOPT
+EPROTONOSUPPORT
+ESOCKTNOSUPPORT
+ENOTSUP
+EOPNOTSUPP
+EPFNOSUPPORT
+EAFNOSUPPORT
+EADDRINUSE
+EADDRNOTAVAIL
+ENETDOWN
+ENETUNREACH
+ENETRESET
+ECONNABORTED
+ECONNRESET
+ENOBUFS
+EISCONN
+ENOTCONN
+ESHUTDOWN
+ETOOMANYREFS
+ETIMEDOUT
+ECONNREFUSED
+ELOOP
+ENAMETOOLONG
+EHOSTDOWN
+EHOSTUNREACH
+ENOTEMPTY
+EPROCLIM
+EUSERS
+EDQUOT
+ESTALE
+EREMOTE
+EBADRPC
+ERPCMISMATCH
+EPROGUNAVAIL
+EPROGMISMATCH
+EPROCUNAVAIL
+ENOLCK
+ENOSYS
+EFTYPE
+EAUTH
+ENEEDAUTH
+EPWROFF
+EDEVERR
+EOVERFLOW
+EBADEXEC
+EBADARCH
+ESHLIBVERS
+EBADMACHO
+ECANCELED
+EIDRM
+ENOMSG
+EILSEQ
+ENOATTR
+EBADMSG
+EMULTIHOP
+ENODATA
+ENOLINK
+ENOSR
+ENOSTR
+EPROTO
+ETIME
+ENOPOLICY
+ENOTRECOVERABLE
+EOWNERDEAD
+EQFULL
+ENOTCAPABLE
+ELAST
+sb_modifiers_retain
+modifiers.c
+modifiers->refcnt > 0
+sb_modifiers_release
+sb_modifiers_set_signal
+sb_modifiers_set_deny_errno
+sb_modifiers_set_approval_category
+sb_modifiers_set_message
+sb_modifiers_set_default_sandbox
+sb_modifiers_set_storage_class
+sb_modifiers_set_enable_state_flag_name
+sb_modifiers_has_modifier
+modifier != SB_MODIFIER_NONE && modifier < SB_MODIFIER_COUNT
+%s: attempted to modify immutable object
+sb_modifiers_get_signal
+modifiers->signum == 0 || bit_test(modifiers->modset, SB_MODIFIER_SEND_SIGNAL)
+_sb_modifiers_set
+sb_mutable_buffer_retain
+mutable_buffer.c
+mbuf->refcnt > 0
+sb_mutable_buffer_release
+overflow writing to buffer
+sb_mutable_buffer_write
+mbuf->bytes_used >= end
+_mbuf_read
+fc->pos >= 0
+_mbuf_write
+sb_operation_get_name
+operation.c
+op < NUM_OPERATIONS
+sb_operation_applies_to_message_filter
+sb_operation_copy_default_action
+opinfo->jump_target_operation != op
+sb_operation_accepts_filter
+sb_operation_accepts_modifier
+modifier_name != NULL
+sb_operation_accepts_message_filter
+msgfilterop < NUM_OPERATIONS
+default
+appleevent-send
+authorization-right-obtain
+boot-arg-set
+consume-extension
+device*
+device-camera
+device-microphone
+darwin-notification-post
+distributed-notification-post
+dynamic-code-generation
+file*
+file-chroot
+file-clone
+file-graft
+file-ioctl
+file-issue-extension
+file-link
+file-lock
+file-map-executable
+file-mknod
+file-mount
+file-mount-update
+file-read*
+file-read-data
+file-read-metadata
+file-read-xattr
+file-revoke
+file-search
+file-test-existence
+file-ungraft
+file-unmount
+file-write*
+file-write-acl
+file-write-create
+file-write-data
+file-write-finderinfo
+file-write-flags
+file-write-mode
+file-write-owner
+file-write-setugid
+file-write-times
+file-write-unlink
+file-write-xattr
+fs-quota*
+fs-quota-get
+fs-quota-on
+fs-quota-off
+fs-quota-set*
+fs-quota-set-limits
+fs-quota-set-usage
+fs-quota-stat
+fs-quota-sync
+fs-rename
+fs-snapshot*
+fs-snapshot-create
+fs-snapshot-delete
+fs-snapshot-mount
+fs-snapshot-revert
+generic-issue-extension
+hid-control
+iokit*
+iokit-get-properties
+iokit-issue-extension
+iokit-open*
+iokit-open-user-client
+iokit-open-service
+iokit-set-properties
+ipc*
+ipc-posix*
+ipc-posix-sem*
+ipc-posix-sem-create
+ipc-posix-sem-open
+ipc-posix-sem-post
+ipc-posix-sem-unlink
+ipc-posix-sem-wait
+ipc-posix-shm*
+ipc-posix-shm-read-data
+ipc-posix-shm-write*
+ipc-posix-shm-write-create
+ipc-posix-shm-write-data
+ipc-posix-shm-write-unlink
+ipc-sysv*
+ipc-sysv-msg
+ipc-sysv-sem
+ipc-sysv-shm
+job-creation
+lsopen
+mach*
+mach-bootstrap
+mach-cross-domain-lookup
+mach-derive-port
+mach-host*
+mach-host-exception-port-set
+mach-host-special-port-set
+mach-issue-extension
+mach-lookup
+mach-priv*
+mach-priv-host-port
+mach-priv-task-port
+mach-register
+mach-task*
+mach-task-exception-port-set
+mach-task-inspect
+mach-task-name
+mach-task-read
+mach-task-special-port*
+mach-task-special-port-get
+mach-task-special-port-set
+necp-client-open
+network*
+network-inbound
+network-bind
+network-outbound
+nvram*
+nvram-delete
+nvram-get
+nvram-set
+opendirectory-user-modify
+process*
+process-codesigning
+process-exec*
+process-exec-interpreter
+process-fork
+process-info*
+process-info-codesignature
+process-info-dirtycontrol
+process-info-ledger
+process-info-listpids
+process-info-pidinfo
+process-info-pidfdinfo
+process-info-pidfileportinfo
+process-info-rusage
+process-info-sandbox-container
+process-info-setcontrol
+process-iopolicy*
+process-iopolicy-get
+process-iopolicy-set
+process-legacy-codesigning*
+process-legacy-codesigning-blob-get
+process-legacy-codesigning-cdhash-get
+process-legacy-codesigning-entitlements-blob-get
+process-legacy-codesigning-entitlements-der-blob-get
+process-legacy-codesigning-identity-get
+process-legacy-codesigning-status*
+process-legacy-codesigning-status-get
+process-legacy-codesigning-status-set
+process-legacy-codesigning-teamid-get
+process-legacy-codesigning-text-offset-get
+pseudo-tty
+qtn-exec
+qtn-exec-no-quarantine
+qtn-user
+sandbox-check
+signal
+socket-ioctl
+socket-option*
+socket-option-get
+socket-option-set
+syscall*
+syscall-unix
+syscall-mach
+syscall-mig
+sysctl*
+sysctl-read
+sysctl-write
+system*
+system-acct
+system-audit
+system-automount
+system-debug
+system-fcntl
+system-fsctl
+system-info
+system-kas-info
+system-kext*
+system-kext-load
+system-kext-unload
+system-kext-query
+system-mac*
+system-mac-label
+system-mac-syscall
+system-memorystatus-control
+system-necp-client-action
+system-nfssvc
+system-package-check
+system-privilege
+system-reboot
+system-sched
+system-set-time
+system-socket
+system-suspend-resume
+system-swap
+user-preference*
+user-preference-read
+managed-preference-read
+user-preference-write
+exception-entitlement
+storage-class-map
+process-exec-update-label
+default-message-filter
+iokit-async-external-method
+iokit-external-method
+iokit-external-trap
+mach-message-send
+xpc-message-send
+extension
+process
+system
+sandbox
+send-signal
+report
+no-report
+sip-override
+message
+user-approval
+no-approval-prompt
+authority
+telemetry
+telemetry-backtrace
+errno
+enable-state-flag
+autobox-telemetry
+restrictive-default
+ae-destination
+auth-right-name
+boot-arg
+extension-class
+extension-token
+notification
+file-mode
+vnode-type
+device
+fs
+ioctl
+no-storage-class
+no-times
+xattr
+snapshot
+iokit-property
+iokit-registry-entry-class
+iokit-user-client-type
+posix-ipc
+semaphore
+mach
+mach-port-role
+host-special-port
+target
+mach-exception
+task-special-port
+socket
+network
+nvram
+csop
+no-sandbox
+iopolicysys
+iopolicysys-policy
+check
+info
+kext-bundle-id
+preference-domain
+sysctl
+socket-option
+syscall
+machtrap
+migroutine
+fcntl
+fsctl
+kas-info
+macf
+memorystatus-control
+necp-client-action
+priv
+grant
+reboot-flags
+exception-entitlement-properties
+assign-storage-class
+default-sandbox
+iokit-method-filter
+iokit-trap-filter
+mach-message-filter
+sb_pattern_escape_vars
+pattern.c
+dest_pos < dest_length
+dest_pos <= dest_length
+sb_pattern_retain
+pattern->refcnt > 0
+sb_pattern_release
+empty subpath pattern
+sb_pattern_disjunction
+sb_pattern_get_context(pattern1) == sb_pattern_get_context(pattern2)
+pattern1->varset == pattern2->varset || pattern1->varset == NULL || pattern2->varset == NULL
+pattern1->refcnt >= 2
+sb_pattern_matches_subset_of_regex
+sb_pattern_get_context(pattern) == sb_regex_get_context(regex)
+sb_pattern_is_disjoint_with_regex
+sb_pattern_is_equivalent
+_parse_variable
+unterminated variable reference at "%s"
+name_end >= name_start
+malformed variable reference: ${}
+_-.:
+variable name "%s" contains unsupported characters
+reference_length >= strlen("${}")
+reference_length <= byte_count
+B40@?0r^{_sb_pattern=}8r^{_sb_pattern=}16^^{_sb_pattern}24r^^{_sb_error}32
+create_pattern_disjunctions
+patterns.c
+sb_condition_list_count(pattern_conditions) > 0
+candidate_set_combine_patterns
+scan != 0
+policy.c
+policy->refcnt > 0
+sb_policy_release
+sb_policy_is_equivalent
+policy1->context == policy2->context
+sb_policy_is_operation_supported
+operation <= MAX_OPERATION
+sb_policy_set_entry_point
+policy->context == sb_instr_get_context(instr)
+sb_policy_is_operation_supported(policy, operation)
+sb_policy_get_entry_point
+sb_policy_alloc
+operation_base + operation_count <= NUM_OPERATIONS
+sb_profile_retain
+profile.c
+profile->refcnt > 0
+sb_profile_release
+%s called multiple times with different variable sets
+sb_profile_set_pattern_variables
+profile flag name required
+v24@?0r^{_sb_textbuf=}8^B16
+sb_profile_iterate_enabled_named_flags_textbufs
+textbuf != NULL
+sb_profile_append_named_flag
+new_count > profile->enabled_named_flag_count
+program.c
+program->refcnt > 0
+sb_program_release
+sb_program_source_alloc
+newcount > program->sources_used
+SBPL version %u or greater is required (got version %u)
+add_instruction
+reduce.c
+new_count > 0
+sb_fsa_recognizer_for_regex
+unterminated escape sequence at end of expression "%s"
+variable references not supported in regular expressions
+unterminated ( in "%s"
+operand_stack_is_empty(&parser)
+alloc_literal
+byte_count != 0
+push_operator
+parser->operator_stack_alloc != 0
+pop_operators
+next_op == RE_OP_END
+op_concat
+combined_size >= arg1->literal.byte_count
+arg1->literal.byte_count <= arg1->literal.byte_alloc
+unsupported syntax: plus operator
+too few operators for %s operation
+|
+concatenation
+?
++
+(
+)
+end_expression
+parser->nesting_level > 0
+unexpected ^ operator in middle of expression
+parse_byteset
+input[0] == '['
+unexpected '-' in middle of bracket expression in "%s"
+:]
+unterminated character class in "%s"
+end >= start
+empty character class in "%s"
+.]
+unterminated collating element in "%s"
+empty collating element
+multicharacter collating elements not supported
+unterminated bracket expression in "%s"
+alnum
+alpha
+blank
+cntrl
+digit
+graph
+lower
+print
+punct
+space
+upper
+xdigit
+...
+unsupported character class "%s"
+push_dot
+sb_byteset_get_population(byteset) == 256
+unsupported syntax: top-level expressions must be anchored with ^ or literal characters
+unsupported syntax: kleene star
+sb_regex_retain
+regex.c
+regex->refcnt > 0
+sb_regex_release
+failed to compile regular expression "%s"
+<regex>
+sb_regex_is_equivalent
+!sb_textbuf_is_equivalent(regex1->pattern, regex2->pattern)
+failed to serialize match expression
+v32@?0^^{_sb_instr}8^B16^B24
+sb_instr_is_conditional(instr)
+instruction jumps to itself
+<internal init prelude>
+<internal sbpl library>
+<implicit policy library>
+<root translation>
+*params*
+entitlements
+*entitlements*
+sb_sbpl_parser_new
+sbpl_parser.c
+errorp == NULL || *errorp != NULL
+parser->refcnt > 0
+sb_sbpl_parser_release
+<input string>
+sb_sbpl_parser_parse_string
+!parser->in_msgfilter_context
+parser->msgfilter == NULL
+<input file>
+parser already finalized
+%finalize
+<stdout>
+version
+v28@?0r*8i16^B20
+v28@?0r*8S16^B20
+v28@?0r*8I16^B20
+with
+deprecated
+invalid modifier: 
+^{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}24@?0^{scheme=^?^?qi[3*][3^{cell}]i^{cell}^{cell}^{cell}^{cell}iQ^{backtrace_frame}^{backtrace_segment}{backtrace_frame=^{cell}^{cell}{location=*SS}S{timeval=qi}^{backtrace_frame}}{backtrace_frame=^{cell}^{cell}{location=*SS}S{timeval=qi}^{backtrace_frame}}i{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}^{cell}{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}^{cell}{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}^{cell}{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}^{cell}{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}^{cell}{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}^{cell}q^{cell}^{cell}^{cell}^{cell}^{cell}[64{port=C(?={?=^{__sFILE}i}{?=***}){location=*SS}I}][64i]ii^{cell}QQ^i^{location}cc^{cell}^{cell}[1024c]^{__sFILE}ii^{cell}i^vq^vi^{_sc_stack_snapshot}}8^{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}16
+operation-expand
+operations-allowed-by-default
+require-all
+require-any
+require-not
+%sbpl-enter-message-filter-context
+%sbpl-leave-message-filter-context
+disable-callouts
+disable-full-symbolication
+accept-profile-extension
+enable-profile-flag
+%extends-builtin
+regex-quote
+variable-quote
+sbpl-filter?
+B16@?0^{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}8
+sbpl-modifier?
+sbpl-operation?
+sbpl-message-filter?
+sbpl-operation-supports-delegation?
+sbpl-operation-supports-autobox?
+sbpl-extends-builtin?
+sbpl-filter-eqv?
+sbpl-message-filter-eqv?
+sbpl-operation-eqv?
+%sbpl-modifier-properties
+sbpl-operation-name
+not an operation: 
+sbpl-operation-can-return?
+sbpl-version-compatible?
+*ios-sandbox-container*
+com.apple.sandbox.container
+*ios-sandbox-application-group*
+com.apple.sandbox.application-group
+*ios-sandbox-system-container*
+com.apple.sandbox.system-container
+*ios-sandbox-system-group*
+com.apple.sandbox.system-group
+*target-platform*
+*default-import-search-paths*
+/System/Library/Sandbox/Profiles
+/usr/share/sandbox
+*sandbox-executable-bundle*
+com.apple.sandbox.executable
+*apply-implicit-policy*
+error loading standard libraries: %s
+ -
+define_type_symbols
+parser->sym_condition == NULL
+parser->sym_operation == NULL
+parser->sym_modifier == NULL
+parser->sym_msgfilter == NULL
+parser->sym_deprecated == NULL
+parser->sym_nop == NULL
+condition
+operation
+modifier
+message-filter
+no-op
+*sbpl-type-symbols*
+sc->gc_protect_lst == initial_gc_protect_lst
+parser->sc == sc
+too many arguments to version
+version number must be integer
+invalid version number
+version number %u incompatible with previously-declared version number (%u)
+load_version_compatibility_definitions
+sbpl1
+sbpl2
+sbpl3
+using compatibility definitions for version %u (latest version is %u)
+%s action not applicable in message filter context
+no version specified
+define_action_block_invoke
+opnum < sb_operation_count_all()
+%s operation can only appear once per rule
+%s operation not applicable in this context
+illegal argument: 
+at least one operation required
+operation "%s" unavailable %s message filter
+within
+outside of
+modifier %s does not apply to operation %s
+message filter %s does not apply to operation %s
+%s modifier can only appear once per rule
+%s modifier does not apply to %s action
+insufficient arguments supplied to %s modifier; got %u, expected %u
+excess arguments supplied to %s modifier; got %u, expected %u
+_list_length
+a == sc->NIL
+expected message filter policy
+add_modifier
+!sb_modifier_requires_argument(modnum)
+check_signal_number
+is_number(modarg)
+signal number #%ld out of range (1, %u)
+check_errno
+errno value #%ld out of range 1-255
+insert_conditional_rule
+sb_condition_list_get_context(conditions) == context
+sb_instr_get_context(action) == context
+car
+is_pair(p)
+cdr
+operation_expand
+too many arguments to operation-expand
+argument to operation-expand must be an operation
+operations_allowed_by_default
+operations_allowed_by_default does not take arguments
+unix
+/
+invalid argument
+%s expects string argument
+define_network_filter_block_invoke
+parser->error != NULL
+parse_network_address
+is_string(arg)
+port missing in network address: %s
+port_str >= host_str
+localhost
+*
+host must be * or localhost in network address
+invalid port in network address
+_define_filter
+string_type == SB_VALUE_TYPE_STRING || string_type == SB_VALUE_TYPE_PATTERN_LITERAL || string_type == SB_VALUE_TYPE_PATTERN_PREFIX || string_type == SB_VALUE_TYPE_PATTERN_SUBPATH || string_type == SB_VALUE_TYPE_PATTERN_REGEX
+unexpected %s argument
+com.apple.app-sandbox.read-write
+arguments expected but none provided
+_define_filter_block_invoke
+sbpl-operation
+sbpl-filter
+sbpl-modifier
+sbpl-message-filter
+string
+numeric
+symbol
+pair
+function
+closure
+continuation
+character
+port
+vector
+macro
+promise
+environment
+backtrace
+object
+<unknown>
+%s-prefix
+out of memory
+path
+subpath_filter_name
+movelen <= subpath_name_len + 1
+subpath_name_len + 3 < subpath_name_alloclen
+-subpath
+rv <= subpath_name_alloclen
+%s-regex
+%s filter expects all arguments to be filters
+argument expected but none provided
+define_combination_filter_block_invoke
+too many arguments to %s
+%s expects a single filter argument
+define_wrapper_filter_block_invoke
+condition != NULL
+sbpl_enter_message_filter_context
+already in message filter context
+unexpected arguments
+argument expected to be message filter
+sbpl_leave_message_filter_context
+not in message filter context
+enable_profile_flag
+argument expected
+expected profile flag name as string
+extends_builtin
+too many arguments
+expected base profile name as string
+redundant call to extend "%s" in %s, line %d
+profile may only extend a single builtin
+v40@?0r*8I16I20^{cell=I(?={?=*Q}{num=c(?=qd)}^{port}^?@?{?=^v^?}{?=^{cell}^{cell}}^{backtrace_frame}){location=*SS}}24^B32
+too many arguments to regex-quote
+argument to regex-quote must be a string
+regex_quote
+quotedlen > 0
+qpos >= quoted
+(size_t)(qpos - quoted) <= quotedlen
+too many arguments to variable-quote
+argument to variable-quote must be a string
+variable_quote
+modifier #%ld out of range (0, %u)
+operation #%ld out of range (0, %u)
+sbpl_extends_builtin
+too many arguments to sbpl-extends-builtin?
+expected profile name as string
+sbpl_filter_eqv
+sbpl_operation_eqv
+expected operation
+expected action
+invalid action
+unexpected argument
+v24@?0^{_sb_instr=}8^B16
+mac
+_make_list_v
+%s
+error
+format_error
+bt == NULL || is_bt_pointer(bt)
+is_string(message)
+ at %s, line %u, column %u
+ <likely symbol value>
+B16@?0^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}8
+\nBacktrace: \n
+%s:%u:%u:\n\t
+<macro expansion>:\n\t
+warn
+%notify-file-open
+define_on_open_handler_block_invoke
+is_string(path)
+is_symbol(access)
+successful == sc->T || successful == sc->F
+write
+read
+unsupported access right
+_define_symbol
+B24@?0r*8^v16
+unsupported-plist-syntax
+_parse_file
+_sb_fsa_serialize
+serialize.c
+sb_fsa_is_recognizer(node)
+push_bytes
+byte_count <= s->position
+serialization too large
+enlarge_buffer
+new_alloc > s->buffer_alloc
+diff >= s->buffer_alloc
+v24@?0r^{_sb_fsa_node=}8^B16
+_sb_fsa_serialize_disjunction_block_invoke
+!may_backtrack || s->backtrack_count == tos + 1
+remaining_child_count > 0
+_sb_fsa_serialize_disjunction
+s->backtrack_count == tos + 1
+too many levels of backtracking
+push_jne_instr
+diff != 0
+diff <= INSTR_JUMP_NE_MAX_LENGTH
+byte_at_address
+address < s->buffer_alloc
+get_bytes_to_address
+current_address >= target_address
+push_match_sequence_instr
+byte_count > 0
+v24@?0C8C12^B16
+_push_match_byteset_instr
+count >= INSTR_BYTESET_MIN_RANGE_COUNT
+count <= INSTR_BYTESET_MAX_RANGE_COUNT
+submatch_end
+s->submatch_depth > 0
+s->backtrack_count >= s->submatch_backtrack_count[s->submatch_depth]
+sb_source_info_copy
+source_info.c
+src != dest
+generate_syscallmask
+syscallmask.c
+sb_filter_accepts_type(filter, SB_VALUE_TYPE_BITMASK)
+unsupported instruction type
+_collect_filter_into_syscallmask
+!sb_condition_is_conjunction(condition, NULL)
+!sb_condition_is_disjunction(condition, NULL)
+!sb_condition_is_negation(condition, NULL)
+!sb_condition_is_constant(condition, NULL)
+v20@?0I8^B12
+textbuf.c
+failed to normalize string "%s": %s
+sb_textbuf_get_length
+count > 0
+sb_textbuf_get_common_prefix_length
+length > 0
+length == sb_buffer_get_byte_count(buffer2)
+_sb_textbuf_with_string_transfer_with_length
+string[length] == '\0'
+v28@?0I8^{_sb_instr=}12^B20
+bitmasks.c
+B16@?0^{_sb_condition=}8
+v24@?0^{_sb_condition=}8^B16
+v28@?0I8^{_sb_condition_list=}12^B20
+non-filter in bitmask construction
+filter mismatch in bitmask construction
+estimate_condition_serialization_size
+sb_condition_is_integer(condition, NULL)
+sb_pattern_var_retain
+variables.c
+var->refcnt > 0
+sb_pattern_var_release
+variable "%s" already assigned ordinal %u
+sb_pattern_var_set_ordinal
+scan->has_ordinal
+prev == NULL || prev->ordinal < ordinal
+scan == NULL || scan->ordinal > ordinal
+varset->assigned_count > 0
+varset->assigned_count <= varset->entry_count
+sb_pattern_varset_retain
+varset->refcnt > 0
+sb_pattern_varset_release
+sb_pattern_varset_get_available_ordinal
+lowest != 0
+LIST_NEXT(scan, assigned_link) == NULL || LIST_NEXT(scan, assigned_link)->ordinal > lowest
+sb_pattern_var_destroy
+varset->entry_count > 0
+sb_pattern_varset_destroy
+LIST_EMPTY(&varset->entries)
+varset->entry_count == 0
+sb_pattern_varset_lookup
+varname[name_length] == '\0'
+sb_pattern_var_new
+invalid variable name
+<warning elided due to memory allocation failure>
+sandbox_normalize_string_ext
+sbunicode.c
+*outlen < capacity
